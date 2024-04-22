@@ -159,18 +159,14 @@ function guardar_editar_anticipo(e) {
   });  
 }
 
-// Numeración
-function actualizar_numeracion() {
-  var serie = $("#serie_ac option:selected").val();
-  $.post("../ajax/anticipo_cliente.php?op=actualizar_numeracion&ser=" + serie, function (r) {
-    var n2 = pad(r, 0);
-    $("#numero_ac").val(n2);
-
-    var SerieReal = $("#serie_ac option:selected").text();
-    $("#SerieReal").val(SerieReal);
-  });
+// Imprimir Ticket
+function exAnticipo_cienteTickcet(idanticipo_cliente){
+  var rutacarpeta = "../reportes/ticketAnticipo_clitente.php?id=" + idanticipo_cliente;
+  $("#modalAntcticket").attr("src", rutacarpeta);
+  $("#modalPreviewticket").modal("show");
 }
 
+// Actualizar Serie Anticipo Cliente
 function selectSerie(){
   $.post("../ajax/anticipo_cliente.php?op=selectSerie", function (r) {
     if (r == '' || r == null) {
@@ -188,6 +184,18 @@ function selectSerie(){
       });
     }      
     $(".charge-serie").html(``);
+  });
+}
+
+// Actualizar Numeración Anticipo Cliente
+function actualizar_numeracion() {
+  var serie = $("#serie_ac option:selected").val();
+  $.post("../ajax/anticipo_cliente.php?op=actualizar_numeracion&ser=" + serie, function (r) {
+    var n2 = pad(r, 0);
+    $("#numero_ac").val(n2);
+
+    var SerieReal = $("#serie_ac option:selected").text();
+    $("#SerieReal").val(SerieReal);
   });
 }
 

@@ -88,8 +88,8 @@ if (!isset($_SESSION["user_nombre"])) {
                                       <div>
                                         <span class="fw-semibold">Facebook</span> <br>                                        
                                         <span class="avatar avatar-sm avatar-rounded">
-                                          <a href="https://www.facebook.com/profile.php?id=100086343481837">
-                                            <img src="../assets/images/jdl/logo-facebook.jpg" class="w-30px" alt="" />
+                                          <a href="">
+                                            <img src="../assets/images/dfs/logo-facebook.jpg" class="w-30px" alt="" />
                                           </a>                                            
                                         </span>                                        
                                       </div>
@@ -100,8 +100,8 @@ if (!isset($_SESSION["user_nombre"])) {
                                       <div>
                                         <span class="fw-semibold">Instagran</span> <br>
                                         <span class="avatar avatar-sm avatar-rounded">
-                                          <a href="https://www.instagram.com/jdltechnology/">
-                                            <img src="../assets/images/jdl/logo-instagram.jpg" class="w-30px" alt="" />
+                                          <a href="">
+                                            <img src="../assets/images/dfs/logo-instagram.jpg" class="w-30px" alt="" />
                                           </a>                                            
                                         </span> 
                                       </div>
@@ -112,8 +112,8 @@ if (!isset($_SESSION["user_nombre"])) {
                                       <div>
                                         <span class="fw-semibold">TikTok</span> <br>
                                         <span class="avatar avatar-sm avatar-rounded">
-                                          <a href="https://www.tiktok.com/@jdltechnology">
-                                            <img src="../assets/images/jdl/logo-tiktok.jpg" class="w-30px" alt="" />
+                                          <a href="">
+                                            <img src="../assets/images/dfs/logo-tiktok.jpg" class="w-30px" alt="" />
                                           </a>                                            
                                         </span> 
                                         </p>

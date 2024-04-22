@@ -91,6 +91,27 @@
       return $insertar;
     }
 
+    public function ticket_anticipo($idanticipo_cliente){
+      $sql = "SELECT  
+                ac.idanticipo_cliente,
+                ac.idpersona_cliente, 
+                p.nombre_razonsocial, 
+                p.apellidos_nombrecomercial, 
+                sdi.abreviatura,
+                p.numero_documento,
+                p.direccion,
+                ac.fecha_anticipo,
+                ac.serie_comprobante,
+                ac.numero_comprobante,
+                ac.total
+              FROM anticipo_cliente ac
+              INNER JOIN persona_cliente pc ON ac.idpersona_cliente = pc.idpersona_cliente
+              INNER JOIN persona p ON pc.idpersona = p.idpersona
+              INNER JOIN sunat_c06_doc_identidad sdi ON p.tipo_documento = sdi.idsunat_c06_doc_identidad
+              WHERE ac.idanticipo_cliente = '$idanticipo_cliente'";
+      return ejecutarConsultaSimpleFila($sql);
+    }
+
     public function numeracion($ser){
       $sql = "SELECT COALESCE(MAX(numero_comprobante) + 1, 1) AS NnumSerieActual
               FROM sunat_c01_tipo_comprobante stc
@@ -109,6 +130,12 @@
             FROM persona_cliente pc
             INNER JOIN persona p ON pc.idpersona = p.idpersona;";
       return ejecutarConsultaArray($sql);   
+    }
+
+
+    public function empresa(){
+      $sql = "SELECT * FROM empresa WHERE numero_documento = '20610630431'";
+      return ejecutarConsultaSimpleFila($sql);
     }
 
 

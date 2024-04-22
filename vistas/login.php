@@ -9,38 +9,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Language" content="es">
 
-  <title> Inicio | Corporación Brartnet </title>
+  <title> Inicio | Proyecto Integrador </title>
 
-  <meta name="description" content="Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!">
-  <meta name="keywords" content="brartnet, tocache, internet tocache, internet, proveedor de internet, servicios de internet, alta velocidad, conexiones de internet, internet en Perú">
-  <meta name="author" content="Corporación Brartnet">  
+  <meta name="description" content="Gestor de Proyectos integradores | Universidad Peruana Unión - Tarapoto-Perú">
+  <meta name="keywords" content="ingeniería de sistemas, UPeU, Proyectos integradores, tarapoto">
+  <meta name="author" content="Gestor de Poryectos Integradores">  
   <meta name="robots" content="index, follow">
   <!-- FACEBOOK -->
-  <meta property="og:title" content="Corporación Brartnet - Proveedor de Servicios de Internet en Perú">
-  <meta property="og:description" content="Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!">
+  <meta property="og:title" content="Gestor de Poryectos Integradores - gestiona, almacena y analisa los proyectos integradores de Ing de Sistemas UPeU campus Tarapoto">
+  <meta property="og:description" content="Gestor de Proyectos Integradores | Universidad Peruana Unión - Tarapoto-Perú">
   <meta property="og:image" content="assets/images/brand-logos/desktop-white.png">
-  <meta property="og:url" content="https://corporacionbrartnet.jdl.pe">
+  <meta property="og:url" content="">
   <!-- TWITTER -->
   <!-- <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@nombre_de_usuario_de_twitter"> -->
-  <meta name="twitter:title" content="Corporación Brartnet">
-  <meta name="twitter:description" content="Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!">
+  <meta name="twitter:title" content="Gestor de Poryectos Integradores">
+  <meta name="twitter:description" content="Gestor de Proyectos integradores | Universidad Peruana Unión - Tarapoto-Perú">
   <meta name="twitter:image" content="assets/images/brand-logos/desktop-white.png">
 
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "name": "Corporación Brartnet",
-      "url": "https://corporacionbrartnet.jdl.pe",
-      "description": "Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!"
+      "name": "Gestor de Poryectos Integradores",
+      "url": "",
+      "description": "Gestor de Proyectos integradores | Universidad Peruana Unión - Tarapoto-Perú"
     }
   </script>
 
-  <link rel="canonical" href="https://corporacionbrartnet.jdl.pe">
+  <link rel="canonical" href="">
 
   <!-- Favicon -->
-  <link rel="icon" href="../assets/images/brand-logos/ico-brartnet.svg" type="image/x-icon">
+  <link rel="icon" href="../assets/images/brand-logos/logotipo.png" type="image/x-icon">
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
   <!-- CSS Implementing Plugins -->

@@ -77,7 +77,7 @@ if (!isset($_SESSION["user_nombre"])) {
               "1" =>  ' <div class="dropdown-center"> 
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownCenterBtn" data-bs-toggle="dropdown" aria-expanded="false"> <i class="nav-icon fa-solid fa-gears"></i> </button> 
                         <ul class="dropdown-menu" aria-labelledby="dropdownCenterBtn" style=""> 
-                          <li><a class="dropdown-item" href="../reportes/compraReporte.php?idanticipo_cliente=' . ($value['idanticipo_cliente']) . '" target="_blanck">Imprimir Ticket</a></li> 
+                          <li><a class="dropdown-item" onclick="exAnticipo_cienteTickcet('.($value['idanticipo_cliente']).')" target="_blanck">Imprimir Ticket</a></li> 
                           <li><a class="dropdown-item" onclick="imprimirA4(' . ($value['idanticipo_cliente']) . ')">A4</a></li>  
                         </ul>
                       </div> ',

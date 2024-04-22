@@ -3,23 +3,12 @@
 $ruta = "";
 $file_go = isset($_GET["file"]) ? $_GET["file"] : "";
 
-// function enrutamiento($tipo, $file){
-//   if ($tipo == 'nube') {
-//     $link_host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/vistas/lockscreen.html?file=' . $file;
-//   } else {
-//     if ($tipo == 'local') {
-//       $link_host = "http://localhost/admin_sevens/vistas/lockscreen.html?file=" . $file;
-//     }
-//   }
-//   return $link_host;
-// }
-
 function enrutamiento($tipo, $file){
   if ($tipo == 'nube') {
     $link_host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/vistas/login.php?file=' . $file;
   } else {
     if ($tipo == 'local') {
-      $link_host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] ."/brartnet/vistas/login.php?file=" . $file;
+      $link_host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] ."/gpi/vistas/login.php?file=" . $file;
     }
   }
   return $link_host;

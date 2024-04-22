@@ -9,21 +9,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Language" content="es">
 
-  <title> Inicio | Corporación Brartnet </title>
+  <title> Inicio | GPI </title>
 
   <meta name="description" content="Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!">
-  <meta name="keywords" content="brartnet, tocache, internet tocache, internet, proveedor de internet, servicios de internet, alta velocidad, conexiones de internet, internet en Perú">
-  <meta name="author" content="Corporación Brartnet">  
+  <meta name="keywords" content="gpi, tocache, internet tocache, internet, proveedor de internet, servicios de internet, alta velocidad, conexiones de internet, internet en Perú">
+  <meta name="author" content="Corporación gpi">  
   <meta name="robots" content="index, follow">
   <!-- FACEBOOK -->
-  <meta property="og:title" content="Corporación Brartnet - Proveedor de Servicios de Internet en Perú">
+  <meta property="og:title" content="Corporación gpi - Proveedor de Servicios de Internet en Perú">
   <meta property="og:description" content="Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!">
   <meta property="og:image" content="assets/images/brand-logos/desktop-white.png">
-  <meta property="og:url" content="https://corporacionbrartnet.jdl.pe">
+  <meta property="og:url" content="">
   <!-- TWITTER -->
   <!-- <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@nombre_de_usuario_de_twitter"> -->
-  <meta name="twitter:title" content="Corporación Brartnet">
+  <meta name="twitter:title" content="Gestor de Proyectos Integradores">
   <meta name="twitter:description" content="Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!">
   <meta name="twitter:image" content="assets/images/brand-logos/desktop-white.png">
 
@@ -31,16 +31,16 @@
     {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "name": "Corporación Brartnet",
-      "url": "https://corporacionbrartnet.jdl.pe",
+      "name": "Gestor de Proyectos Integradores",
+      "url": "",
       "description": "Proveedor de servicios de internet de alta velocidad en Perú. Ofrecemos conexiones rápidas y confiables para hogares y empresas. ¡Contáctanos para obtener más información!"
     }
   </script>
 
-  <link rel="canonical" href="https://corporacionbrartnet.jdl.pe">
+  <link rel="canonical" href="">
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/images/brand-logos/ico-brartnet.svg" type="image/x-icon">
+  <link rel="icon" href="assets/images/brand-logos/logotipo.png" type="image/x-icon">
 
   <!-- Bootstrap Css -->
   <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -1250,9 +1250,9 @@
 
       <div class="text-center landing-main-footer py-3">
         <span class="text-muted fs-15"> Copyright © <span id="year"></span> 
-          <a href="javascript:void(0);" class="text-primary fw-semibold"><u>Corporacion Brarnet SAC</u></a>.
+          <a href="javascript:void(0);" class="text-primary fw-semibold"><u>Universidad Peruana Unión - Tarapoto</u></a>.
            Diseñado por <span class="fa fa-heart text-danger"></span>  <a href="javascript:void(0);" class="text-primary fw-semibold">
-            <u> JDL Tecnology</u>
+            <u> DFS Ingenieros</u>
           </a> Todos los derechos reservados.
         </span>
       </div>

@@ -18,7 +18,7 @@ if (!isset($_SESSION["user_nombre"])) {
   $ajax_general = new Ajax_general($_SESSION['idusuario']);
   $_ubigeo       = new Ubigeo();
 
-  $scheme_host  =  ($_SERVER['HTTP_HOST'] == 'localhost' ? 'http://localhost/brartnet/' :  $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/');
+  $scheme_host  =  ($_SERVER['HTTP_HOST'] == 'localhost' ? 'http://localhost/gpi/' :  $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/');
   $imagen_error = "this.src='../dist/svg/404-v2.svg'";
   $toltip       = '<script> $(function () { $(\'[data-bs-toggle="tooltip"]\').tooltip(); }); </script>';
 
@@ -26,10 +26,10 @@ if (!isset($_SESSION["user_nombre"])) {
 
       /* ══════════════════════════════════════ A P I S  ══════════════════════════════════════ */
 
-    // RENIEC JDL
-    case 'reniec_jdl':
+    // RENIEC gpi
+    case 'reniec_gpi':
       $dni = $_POST["dni"];
-      $rspta = $ajax_general->datos_reniec_jdl($dni);
+      $rspta = $ajax_general->datos_reniec_gpi($dni);
       echo json_encode($rspta);
     break;
     // RENIEC WFACX
@@ -38,10 +38,10 @@ if (!isset($_SESSION["user_nombre"])) {
       $rspta = $ajax_general->datos_reniec_otro($dni);
       echo json_encode($rspta);
     break;
-    // SUNAT JDL
-    case 'sunat_jdl':
+    // SUNAT gpi
+    case 'sunat_gpi':
       $ruc = $_POST["ruc"];
-      $rspta = $ajax_general->datos_sunat_jdl($ruc);
+      $rspta = $ajax_general->datos_sunat_gpi($ruc);
       echo json_encode($rspta, true);
     break;
     // SUNAT WFACX

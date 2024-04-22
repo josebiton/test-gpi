@@ -13,8 +13,8 @@ Class Ajax_general
     $this->id_usr_sesion = $id_usr_sesion;
   } 
 
-  // ══════════════════════════════════════ RENIEC JDL ══════════════════════════════════════
-  public function datos_reniec_jdl($dni) { 
+  // ══════════════════════════════════════ RENIEC gpi ══════════════════════════════════════
+  public function datos_reniec_gpi($dni) { 
 
     $url = "https://dniruc.apisperu.com/api/v1/dni/".$dni."?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imp1bmlvcmNlcmNhZG9AdXBldS5lZHUucGUifQ.bzpY1fZ7YvpHU5T83b9PoDxHPaoDYxPuuqMqvCwYqsM";
     
@@ -53,8 +53,8 @@ Class Ajax_general
     return json_decode($response);
   }
 
-  // ══════════════════════════════════════ SUNAT JDL ══════════════════════════════════════
-  public function datos_sunat_jdl($ruc)	{ 
+  // ══════════════════════════════════════ SUNAT gpi ══════════════════════════════════════
+  public function datos_sunat_gpi($ruc)	{ 
     $url = "https://dniruc.apisperu.com/api/v1/ruc/".$ruc."?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imp1bmlvcmNlcmNhZG9AdXBldS5lZHUucGUifQ.bzpY1fZ7YvpHU5T83b9PoDxHPaoDYxPuuqMqvCwYqsM";    
     $curl = curl_init();                              //  Iniciamos curl    
     curl_setopt( $curl, CURLOPT_SSL_VERIFYPEER, 0 );  // Desactivamos verificación SSL    

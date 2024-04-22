@@ -6,19 +6,19 @@
 //define("DB_HOST","198.38.88.120");
 
 //Nombre de la base de datos
-//define("DB_NAME", "jdlpe_test_sunat");
+//define("DB_NAME", "");
 
 //Usuario de la base de datos
-//define("DB_USERNAME", "jdlpe_test_sunat");
+//define("DB_USERNAME", "");
 
 //Contraseña del usuario de la base de datos
-//define("DB_PASSWORD", "jdlpe_test_sunat");
+//define("DB_PASSWORD", "");
 
 //definimos la codificación de los caracteres
 //define("DB_ENCODE","utf8");
 
 //Definimos una constante como nombre del proyecto
-//define("PRO_NOMBRE","SISTEMA DE FACTURACION JDL");
+//define("PRO_NOMBRE","SISTEMA DE GESTION DFS");
 
 // $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 // $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];

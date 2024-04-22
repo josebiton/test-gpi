@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Login | Facturacion JDL </title>
+  <title> Login | GESTOR DFS </title>
   <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
   <meta name="Author" content="Spruko Technologies Private Limited">
   <meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
@@ -554,7 +554,7 @@
       <div id="error-servidor" class="toast colored-toast bg-danger text-fixed-white" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-danger text-fixed-white">
           <img class="bd-placeholder-img rounded me-2" src="../assets/images/brand-logos/logo-short.png" alt="...">
-          <strong class="me-auto">JDL anuncia</strong>
+          <strong class="me-auto"> anuncia</strong>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body bg-white text-black">  Error de conexion, si esto perciste contactar al ing de sistemas <b><a class="" href="https://wa.link/oetgkf" target="_blank">click aqui</a></b>. </div>
