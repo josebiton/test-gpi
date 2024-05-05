@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Language" content="es">
 
-  <title> Inicio | Proyecto Integrador </title>
+  <title> Login | Proyecto Integrador </title>
 
   <meta name="description" content="Gestor de Proyectos integradores | Universidad Peruana Unión - Tarapoto-Perú">
   <meta name="keywords" content="ingeniería de sistemas, UPeU, Proyectos integradores, tarapoto">
@@ -55,36 +55,19 @@
   <!-- Mi stylo -->
   <link rel="stylesheet" href="../assets/css/style_new.css">
 
-  <style>
-  .gradient-x-overlay-lg-dark-videoo::before {
-    /* z-index: 2 !important; */
-    /* background-image: linear-gradient(to right,rgb(63 165 60 / 95%) 0,rgba(33,50,91,.95) 100%) !important; */
-    /* background-repeat: repeat-x  !important;  */
-
-    z-index: 2 !important;
-    background-image: linear-gradient(to right,rgb(0 0 0) 0,rgb(4 4 4 / 2%) 100%) !important;
-    background-repeat: repeat-x !important;
-  }
-
-</style>
 </head>
 
 <body>
 
-  <!-- ========== MAIN ========== -->
-  <main id="content" role="main">
-    <!-- Hero Section -->
-    <div class="gradient-x-overlay-lg-dark-videoo">
-      <!-- Video Background -->
-      <div class="js-video-bg d-none d-md-block position-absolute w-100 h-100"
-           data-hs-video-bg-options='{
-             "type": "you-tube",
-             "videoId": "qZJWzNT39Ig",
-             "ratio": 0.65
-           }'>
-      </div>
-      <!-- End Video Background -->
+  <video autoplay muted loop playsinline style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -100;">
+    <source src="../assets/images/authentication/fond.mp4" type="video/mp4">
+    Tu navegador no soporta el video HTML5.
+  </video>
 
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main" style="z-index: 100; position: relative;">
+    <!-- Hero Section -->
+    <div>
       <div class="position-relative z-index-2">
         <!-- Content -->
         <div class="d-md-flex">
@@ -93,7 +76,7 @@
               <!-- Info -->
               <div class="mt-5 mb-7">
                 <h1 class="display-4 text-white mb-3">Bienvenido de nuevo</h1>
-                <p class="lead text-white">Inicie sesión para administrar su página web.</p>
+                <p class="lead text-white">Inicie sesión para administrar su proyecto.</p>
               </div>
               <!-- End Info -->
 
@@ -121,67 +104,11 @@
           </div>
         </div>
         <!-- End Content -->
-
-        <!-- Clients Section -->
-        <div class="position-absolute bottom-0 right-0 left-0">
-          <div class="container-fluid py-5">
-            <div class="js-slick-carousel slick"
-                 data-hs-slick-carousel-options='{
-                   "slidesToShow": 6,
-                   "autoplay": true,
-                   "autoplaySpeed": 5000,
-                   "infinite": true,
-                   "responsive": [{
-                     "breakpoint": 1200,
-                     "settings": {
-                       "slidesToShow": 4
-                     }
-                   }, {
-                     "breakpoint": 992,
-                     "settings": {
-                       "slidesToShow": 4
-                     }
-                   }, {
-                     "breakpoint": 768,
-                     "settings": {
-                       "slidesToShow": 3
-                     }
-                   }, {
-                     "breakpoint": 576,
-                     "settings": {
-                       "slidesToShow": 3
-                     }
-                   }]
-                 }'>
-              <div class="js-slide">
-                <img class="-max-w-11rem max-w-md-13rem mx-auto h-50px" height="200px" src="../assets/modulo/login/logo-cisco.svg" alt="Image Description">
-              </div>
-              <div class="js-slide">
-                <img class="-max-w-11rem max-w-md-13rem mx-auto h-50px" height="200px" src="../assets/modulo/login/logo-huawei.svg" alt="Image Description">
-              </div>
-              <div class="js-slide">
-                <img class="-max-w-11rem max-w-md-13rem mx-auto h-50px" height="200px" src="../assets/modulo/login/logo-nexxt.svg" alt="Image Description">
-              </div>
-              <div class="js-slide">
-                <img class="-max-w-11rem max-w-md-13rem mx-auto h-50px" height="200px" src="../assets/modulo/login/logo-tplink.svg" alt="Image Description">
-              </div>
-              <div class="js-slide">
-                <img class="-max-w-11rem max-w-md-13rem mx-auto h-50px" height="200px" src="../assets/modulo/login/logo-ubiquiti.svg" alt="Image Description">
-              </div>
-              <div class="js-slide">
-                <img class="-max-w-11rem max-w-md-13rem mx-auto h-50px" height="200px" src="../assets/modulo/login/logo-xtech.svg" alt="Image Description">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Clients Section -->
       </div>
 
       <div class="d-lg-none position-absolute top-0 right-0 bottom-0 left-0 bg-img-hero" style="background-image: url(../assets/images/media/media-71.jpg);"></div>
     </div>
     <!-- End Hero Section -->    
-
-    
     
   </main>
   <!-- ========== END MAIN ========== -->
@@ -191,7 +118,7 @@
   <div id="jsPreloader" class="page-preloader">
     <div class="page-preloader-content-centered">
       <div class="spinner-grow text-primary" role="status">
-        <span class="sr-only">Loading...</span>
+        <span class="sr-only">Cargando...</span>
       </div>
     </div>
   </div>
@@ -236,25 +163,7 @@
     });
 
     $(document).on('ready', function () {
-      // INITIALIZATION OF HEADER
-      // =======================================================
-      // var header = new HSHeader($('#header')).init();
-
-
-      // INITIALIZATION OF MEGA MENU
-      // =======================================================
-      // var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
-      //   desktop: {
-      //     position: 'left'
-      //   }
-      // }).init();
-
-
-      // INITIALIZATION OF UNFOLD
-      // =======================================================
-      //var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
-
-
+      
       // INITIALIZATION OF VIDEO ON BACKGROUND
       // =======================================================
       $('.js-video-bg').each(function () {

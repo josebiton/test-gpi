@@ -106,6 +106,7 @@
                               <div class="row gy-2" id="cargando-1-fomulario">
                                 <!-- id usuario -->
                                 <input type="hidden" name="idusuario" id="idusuario" />                                 
+                                <input type="hidden" name="idusuario_sesion" id="idusuario_sesion" value="<?php echo $_SESSION['idusuario']; ?>"/>                                 
                               
                                 <!-- Trabajador -->
                                 <div class="col-md-6">
@@ -161,7 +162,7 @@
                                   <div  id="permisos"> </div>
                                 </div>    
 
-                                <div class="col-xl-12">                          
+                                <!-- <div class="col-xl-12">                          
                                   <div class="mail-notification-settings">
                                     <p class="fs-14 mb-1 fw-semibold text-primary">Rol Correlativos</p>
                                     <p class="fs-12 mb-0 text-muted">Selecciona el correlativo de los comprobantes.</p>
@@ -175,7 +176,7 @@
                                     <p class="fs-12 mb-0 text-muted">Asigna al usuario a la empresa correcta</p>
                                   </div>                        
                                   <div id="empresas"> </div>                                           
-                                </div>
+                                </div> -->
 
                               </div>
                               <div class="row" id="cargando-4-fomulario" style="display: none;" >

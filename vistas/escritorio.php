@@ -18,7 +18,7 @@
 
       </head> 
 
-      <body idempresa="<?php echo $_SESSION["idusuario"];?>" reporte="<?php echo $_SESSION["reporte"];?>" >
+      <body idempresa="<?php echo $_SESSION["idusuario"];?>" >
 
         <?php include("template/switcher.php"); ?>
         <?php include("template/loader.php"); ?>

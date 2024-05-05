@@ -103,40 +103,23 @@ Class Ajax_general
 	}
 
   // ══════════════════════════════════════ U S U A R I O - S E L E C T 2  ══════════════════════════════════════
-	public function select2_usuario_trabajador($id)	{
-    // $data = [];
-		$sql="SELECT p.idpersona, p.nombre_razonsocial, p.apellidos_nombrecomercial, p.numero_documento,p.foto_perfil, ct.nombre as cargo 
-		FROM persona p 
-		LEFT JOIN usuario u ON p.idpersona = u.idpersona 
-		INNER JOIN cargo_trabajador ct ON p.idcargo_trabajador = ct.idcargo_trabajador
-		WHERE p.idtipo_persona = '2' and p.estado = '1' AND p.estado_delete = '1' AND u.idpersona IS NULL;";
-		$select_1 = ejecutarConsultaArray($sql);		
+	public function select2_usuario_trabajador()	{
+    $user = $_SESSION['idusuario'];
 
-    if ( empty($id) ) {
-      return $select_1;
-    }else{
+		$sql="SELECT p.idpersona, pt.idpersona_trabajador, p.foto_perfil, ct.nombre cargo, p.numero_documento,
+    CASE 
+      WHEN p.tipo_persona_sunat = 'NATURAL' THEN CONCAT(p.nombre_razonsocial, ' ', p.apellidos_nombrecomercial) 
+        WHEN p.tipo_persona_sunat = 'JURÍDICA' THEN p.nombre_razonsocial 
+      ELSE '-'
+    END AS nombre_completo
+    FROM persona_trabajador pt
+    INNER JOIN persona AS p ON pt.idpersona = p.idpersona
+    INNER JOIN cargo_trabajador AS ct ON p.idcargo_trabajador = ct.idcargo_trabajador
+    LEFT JOIN usuario AS u ON p.idpersona = u.idpersona
+    WHERE u.idusuario <> '$user' OR u.idusuario IS NULL";
+		$select_1 = ejecutarConsultaArray($sql);
 
-      $sql="SELECT p.idpersona, p.nombre_razonsocial, p.apellidos_nombrecomercial, p.numero_documento,p.foto_perfil, ct.nombre as cargo 
-      FROM persona p 
-      LEFT JOIN usuario u ON p.idpersona = u.idpersona 
-      INNER JOIN cargo_trabajador ct ON p.idcargo_trabajador = ct.idcargo_trabajador
-      WHERE p.idtipo_persona = '2' and p.estado = '1' AND p.estado_delete = '1' AND u.idusuario = '$id';";
-      $select_2 = ejecutarConsultaSimpleFila($sql);
-
-      if ( empty($select_2['data']) ) {    }else{
-        $data = [
-          'idpersona'                 =>$select_2['data']['idpersona'],
-          'nombre_razonsocial'        =>$select_2['data']['nombre_razonsocial'],
-          'apellidos_nombrecomercial' =>$select_2['data']['apellidos_nombrecomercial'],
-          'numero_documento'          =>$select_2['data']['numero_documento'],
-          'foto_perfil'               =>$select_2['data']['foto_perfil'],
-          'cargo'                     =>$select_2['data']['cargo'],
-        ];
-        array_push( $select_1['data'], $data);
-      }
-      
-      return $retorno = ['status'=>true, 'mesage'=>'Todo bien', 'data'=>$select_1['data'], ]; 
-    }
+    return $retorno = ['status'=>true, 'mesage'=>'Todo bien', 'data'=>$select_1['data'], ]; 
 	}
 
   // ══════════════════════════════════════ U S U A R I O - S E L E C T 2  ══════════════════════════════════════

@@ -7,7 +7,7 @@ if (!isset($_SESSION["user_nombre"])) {
   echo json_encode($retorno);  //Validamos el acceso solo a los usuarios logueados al sistema.
 } else {
 
-  if ($_SESSION['registrar_trabajador'] == 1) {
+  if ($_SESSION['trabajador'] == 1) {
     
     require_once "../modelos/Trabajador.php";
 
@@ -15,7 +15,7 @@ if (!isset($_SESSION["user_nombre"])) {
     
     date_default_timezone_set('America/Lima');  $date_now = date("d_m_Y__h_i_s_A");
     $toltip = '<script> $(function () { $(\'[data-bs-toggle="tooltip"]\').tooltip(); }); </script>';
-    $scheme_host =  ($_SERVER['HTTP_HOST'] == 'localhost' ? 'http://localhost/gpi/' :  $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].'/');
+    $scheme_host =  ($_SERVER['HTTP_HOST'] == 'localhost' ? 'http://localhost/front_jdl/admin/' :  $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].'/');
 
     // :::::::::::::::::::::::::::::::::::: D A T O S   E M P R E S A ::::::::::::::::::::::::::::::::::::::
 
@@ -90,7 +90,22 @@ if (!isset($_SESSION["user_nombre"])) {
       case 'mostrar_trabajador':
         $rspta = $trabajador->mostrar_trabajdor($_POST["idpersona"]);
         echo json_encode($rspta);
-      break;      
+      break;    
+      
+      case 'eliminar':
+        $rspta = $trabajador->eliminar($_GET["id_tabla"], $_GET["idpersona"]);
+        echo json_encode($rspta, true);
+      break;
+
+      case 'papelera':
+        $rspta = $trabajador->papelera($_GET["id_tabla"], $_GET["idpersona"]);
+        echo json_encode($rspta, true);
+      break;
+
+      case 'activar':
+        $rspta = $trabajador->activar($_GET["id_tabla"], $_GET["idpersona"]);
+        echo json_encode($rspta, true);
+      break;
 
       case 'listar_tabla_principal':
         $rspta = $trabajador->listar_tabla_principal();
@@ -107,8 +122,8 @@ if (!isset($_SESSION["user_nombre"])) {
             "0" => $count++,
             "1" => '<div class="hstack gap-2 fs-15">' .
               '<button class="btn btn-icon btn-sm btn-warning-light" onclick="mostrar(' . $reg->idpersona . ')" data-bs-toggle="tooltip" title="Editar"><i class="ri-edit-line"></i></button>'.
-              ($reg->estado ? '<button  class="btn btn-icon btn-sm btn-danger-light product-btn" onclick="desactivar(' . $reg->idpersona . ', \'' . encodeCadenaHtml($reg->nombre_razonsocial .' '. $reg->apellidos_nombrecomercial) . '\')" data-bs-toggle="tooltip" title="Eliminar"><i class="ri-delete-bin-line"></i></button>':
-              '<button class="btn btn-icon btn-sm btn-success-light product-btn" onclick="activar(' . $reg->idpersona . ')" data-bs-toggle="tooltip" title="Activar"><i class="fa fa-check"></i></button>'
+              ($reg->estado ? '<button  class="btn btn-icon btn-sm btn-danger-light product-btn" onclick="desactivar(' . $reg->idpersona_trabajador. ', '. $reg->idpersona . ', \'' . encodeCadenaHtml($reg->nombre_razonsocial .' '. $reg->apellidos_nombrecomercial) . '\')" data-bs-toggle="tooltip" title="Eliminar"><i class="ri-delete-bin-line"></i></button>':
+              '<button class="btn btn-icon btn-sm btn-success-light product-btn" onclick="activar(' . $reg->idpersona_trabajador. ', '. $reg->idpersona . ')" data-bs-toggle="tooltip" title="Activar"><i class="fa fa-check"></i></button>'
               ).
             '</div>',        
             "2" =>'<div class="d-flex flex-fill align-items-center">
@@ -125,7 +140,7 @@ if (!isset($_SESSION["user_nombre"])) {
             "4" => $reg->cargo_trabajador,
             "5" => '<a href="tel:+51'.$reg->celular.'">'.$reg->celular.'</a>',
             "6" => '<textarea cols="30" rows="2" class="textarea_datatable bg-light" readonly="">'.$reg->direccion.'</textarea>',
-            "7" =>  '<span class="badge bg-outline-warning cursor-pointer font-size-12px" onclick="clientes_x_trabajador('.$reg->idpersona_trabajador.');" data-bs-toggle="tooltip" title="Ver clientes">'.$reg->cant_cliente.'</span>',
+            "7" =>  '<span class="badge bg-outline-warning cursor-pointer font-size-12px" onclick="clientes_x_trabajador('.$reg->idpersona_trabajador.');" data-bs-toggle="tooltip" title="Ver clientes">nulo</span>',
             
             "8" => $reg->nombre_razonsocial .' '. $reg->apellidos_nombrecomercial,
             "9" => $reg->tipo_documento,

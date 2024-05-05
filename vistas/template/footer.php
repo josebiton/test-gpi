@@ -4,7 +4,7 @@
     <span class="text-muted">
       Copyright ©
       <span id="year"></span>
-      <a href="" target="_blank"  class="text-dark fw-semibold">DFS</a>.
+      <a href="" target="_blank"  class="text-dark fw-semibold">GPI</a>.
       Diseñado con
       <span class="bi bi-heart-fill text-danger"></span> por
       <a href="" target="_blank" > <span class="fw-semibold text-primary text-decoration-underline">DFS Ingenieros</span> </a>

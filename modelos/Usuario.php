@@ -194,10 +194,10 @@ class Usuario
 		return ejecutarConsulta($sql);
 	}
 
-	public function listarmarcadosEmpresaTodos()	{
-		$sql = "SELECT * from usuario_empresa ";
-		return ejecutarConsulta($sql);
-	}
+	// public function listarmarcadosEmpresaTodos()	{
+	// 	$sql = "SELECT * from usuario_empresa ";
+	// 	return ejecutarConsulta($sql);
+	// }
 
 	public function listarmarcadosNumeracion($idusuario)	{
 		$sql = "SELECT * from sunat_usuario_comprobante where idusuario='$idusuario'";

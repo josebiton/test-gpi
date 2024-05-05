@@ -106,15 +106,21 @@ class Trabajador
 		}			
 	}
 
-	//Implementamos un método para desactivar usuario
-	public function desactivar($idusuario) {
-		$sql = "UPDATE usuario set condicion='0' where idusuario='$idusuario'";
+	public function eliminar($idtrabajador, $idpersona) {
+		$sql = "UPDATE persona set estado_delete='0' where idpersona='$idpersona'";	ejecutarConsulta($sql);
+		$sql = "UPDATE persona_trabajador set estado_delete='0' where idpersona_trabajador='$idtrabajador'";
 		return ejecutarConsulta($sql);
 	}
 
-	//Implementamos un método para activar usuario
-	public function activar($idusuario)	{
-		$sql = "UPDATE usuario set condicion='1' where idusuario='$idusuario'";
+	public function papelera($idtrabajador, $idpersona) {
+		$sql = "UPDATE persona set estado='0' where idpersona='$idpersona'";	ejecutarConsulta($sql);
+		$sql = "UPDATE persona_trabajador set estado='0' where idpersona_trabajador='$idtrabajador'";
+		return ejecutarConsulta($sql);
+	}
+
+	public function activar($idtrabajador, $idpersona)	{
+		$sql = "UPDATE persona set estado='0' where idpersona='$idpersona'";	ejecutarConsulta($sql);
+		$sql = "UPDATE persona_trabajador set estado='1' where idpersona_trabajador='$idtrabajador'";
 		return ejecutarConsulta($sql);
 	}
 
@@ -133,8 +139,7 @@ class Trabajador
 
 	//Implementar un método para listar los registros
 	public function listar_tabla_principal()	{
-		$sql = "SELECT p.*, pt.idpersona_trabajador, pt.ruc, pt.usuario_sol, pt.clave_sol, pt.sueldo_mensual, pt.sueldo_diario, t.nombre as tipo_persona, c.nombre as cargo_trabajador, sdi.abreviatura as tipo_documento, 
-		( SELECT COUNT(*) FROM persona_cliente as pc WHERE pc.idpersona_trabajador = pt.idpersona_trabajador ) AS cant_cliente
+		$sql = "SELECT p.*, pt.idpersona_trabajador, pt.ruc, pt.sueldo_mensual, pt.sueldo_diario, t.nombre as tipo_persona, c.nombre as cargo_trabajador, sdi.abreviatura as tipo_documento
 		FROM  persona as p
 		inner join persona_trabajador as pt on pt.idpersona = p.idpersona
 		INNER JOIN tipo_persona as t ON t.idtipo_persona = p.idtipo_persona

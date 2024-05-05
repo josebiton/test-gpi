@@ -197,14 +197,14 @@ if (!isset($_SESSION["user_nombre"])) {
 
     // ══════════════════════════════════════ U S U A R I O - S E L E C T 2  ══════════════════════════════════════
     case 'select2_usuario_trabajador':
-      $rspta = $ajax_general->select2_usuario_trabajador($_GET['id']);
+      $rspta = $ajax_general->select2_usuario_trabajador();
       // echo json_encode($rspta, true); die;
       $data = "";
 
       if ($rspta['status']) {
 
         foreach ($rspta['data'] as $key => $value) {
-          $data  .= '<option value=' . $value['idpersona'] . ' title="' . $value['foto_perfil'] . '" cargo="' . $value['cargo'] . '">' . $value['nombre_razonsocial'] . ' ' . $value['apellidos_nombrecomercial'] . ' - ' . $value['numero_documento'] . '</option>';
+          $data  .= '<option value=' . $value['idpersona'] . ' title="' . $value['foto_perfil'] . '" cargo="' . $value['cargo'] . '">' . $value['nombre_completo'] . ' - ' . $value['numero_documento'] . '</option>';
         }
 
         $retorno = array( 'status' => true, 'message' => 'Salió todo ok', 'data' => $data, );

@@ -10,13 +10,13 @@ function init() {
   $(".btn-guardar").on("click", function (e) { if ( $(this).hasClass('send-data')==false) { $("#submit-form-usuario").submit(); }  });
 
 	// ══════════════════════════════════════ S E L E C T 2 ══════════════════════════════════════
-  lista_select2("../ajax/ajax_general.php?op=select2_usuario_trabajador&id=", '#idpersona', null);
+  lista_select2("../ajax/ajax_general.php?op=select2_usuario_trabajador", null);
 
   // ══════════════════════════════════════ I N I T I A L I Z E   S E L E C T 2 ══════════════════════════════════════  
   $("#idpersona").select2({  theme: "bootstrap4", placeholder: "Seleccione", allowClear: true, });
 
 	$.post("../ajax/usuario.php?op=permisos&id=", function (r) {	$("#permisos").html(r);	}).fail( function(e) { ver_errores(e); } );
-	$.post("../ajax/usuario.php?op=series&id=", function (r) {	$("#series").html(r);	}).fail( function(e) { ver_errores(e); } );
+	// $.post("../ajax/usuario.php?op=series&id=", function (r) {	$("#series").html(r);	}).fail( function(e) { ver_errores(e); } );
 	// $.post("../ajax/usuario.php?op=permisosEmpresaTodos", function (r) {	$("#empresas").html(r);	});
 }
 
