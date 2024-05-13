@@ -15,7 +15,7 @@ if (!isset($_SESSION["user_nombre"])) {
     
     date_default_timezone_set('America/Lima');  $date_now = date("d_m_Y__h_i_s_A");
     $toltip = '<script> $(function () { $(\'[data-bs-toggle="tooltip"]\').tooltip(); }); </script>';
-    $scheme_host =  ($_SERVER['HTTP_HOST'] == 'localhost' ? 'http://localhost/front_jdl/admin/' :  $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].'/');
+    $scheme_host =  ($_SERVER['HTTP_HOST'] == 'localhost' ? 'http://localhost/gpi/admin/' :  $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].'/');
 
     // :::::::::::::::::::::::::::::::::::: D A T O S   E M P R E S A ::::::::::::::::::::::::::::::::::::::
 

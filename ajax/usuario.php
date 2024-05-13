@@ -17,7 +17,6 @@ $login      = isset($_POST["login"]) ? limpiarCadena($_POST["login"]) : "";
 $clave      = isset($_POST["clave"]) ? limpiarCadena($_POST["clave"]) : "";
 
 $permiso    = isset($_POST["permiso"]) ? $_POST['permiso'] : "";
-$serie      = isset($_POST["serie"]) ? $_POST['serie'] : "";
 
 switch ($_GET["op"]) {
   case 'guardaryeditar':
@@ -30,10 +29,10 @@ switch ($_GET["op"]) {
     }
 
     if (empty($idusuario)) {
-      $rspta = $usuario->insertar($idpersona, $login, $clavehash, $permiso , $serie );
+      $rspta = $usuario->insertar($idpersona, $login, $clavehash, $permiso);
       echo json_encode($rspta, true);
     } else {
-      $rspta = $usuario->editar($idusuario, $idpersona, $login, $clavehash, $permiso , $serie );
+      $rspta = $usuario->editar($idusuario, $idpersona, $login, $clavehash, $permiso);
       echo json_encode($rspta, true);
     }
   break;
@@ -132,11 +131,11 @@ switch ($_GET["op"]) {
 
   break;
 
-  case 'permisos':
+  case 'permisos_empresa':
     //Obtenemos todos los permisos de la tabla permisos
     require_once "../modelos/Permiso.php";
     $permiso = new Permiso();
-    $rspta = $permiso->listar_todos_permisos();
+    $rspta = $permiso->listar_permisos_empresa();
 
     $id = $_GET['id'];
     $marcados = $usuario->listarmarcados($id); # Obtener los permisos asignados al usuario
@@ -162,63 +161,67 @@ switch ($_GET["op"]) {
     echo '</div>';
   break;
 
-  case 'permisosEmpresa':
+  case 'permisos_coordinador':
     //Obtenemos todos los permisos de la tabla permisos
     require_once "../modelos/Permiso.php";
     $permiso = new Permiso();
-    $rspta = $permiso->listarEmpresa();
+    $rspta = $permiso->listar_permisos_coordinador();
 
-    
     $id = $_GET['id'];
-    $marcados = $usuario->listarmarcadosEmpresa($id); # Obtener los permisos asignados al usuario
-  
+    $marcados = $usuario->listarmarcados($id); # Obtener los permisos asignados al usuario
+
     $valores = array(); # Declaramos el array para almacenar todos los permisos marcados
 
-    while ($per = $marcados['data']->fetch_object()) { array_push($valores, $per->idempresa); } # Almacenar los permisos asignados al usuario en el array
+    foreach ($marcados['data'] as $key => $val) { array_push($valores, $val['idpermiso']); } # Almacenar los permisos asignados al usuario en el array
 
     //Mostramos la lista de permisos en la vista y si están o no marcados
     echo '<div class="row gy-2" >';
-    foreach ($rspta['data'] as $key => $val) {
-     
-      if ($key % 3 === 0) {   echo '<div class="col-lg-3" >';   } # abrimos el: col-lg-2
-     
-      $sw = in_array($val['idempresa'], $valores) ? 'checked' : '';
-      echo '<div class="custom-toggle-switch d-flex align-items-center mb-1">
-        <input id="empresa_' . $val['idempresa'] . '" name="empresa[]" type="checkbox" ' . $sw . ' value="' . $val['idempresa'] . '">
-        <label for="empresa_' . $val['idempresa'] . '" class="label-primary"></label><span class="ms-3">' . $val['nombre_razon_social'] . '</span>
-      </div>';
-     
-      if (($key + 1) % 3 === 0 || $key === count($rspta['data']) - 1) { echo "</div>"; } # cerramos el: col-lg-2
+    foreach ($rspta['data']['agrupado'] as $key => $val1) {   
+      echo '<div class="col-lg-4 col-xl-3 col-xxl-3 mt-3" >';
+      echo '<span >'.$val1['modulo'].'</span>';
+      foreach ($val1['submodulo'] as $key => $val2) {
+        $sw = in_array($val2['idpermiso'], $valores) ? 'checked' : '';
+        echo '<div class="custom-toggle-switch d-flex align-items-center mt-2 mb-2">
+          <input id="permiso_' . $val2['idpermiso'] . '" name="permiso[]" type="checkbox" ' . $sw . ' value="' . $val2['idpermiso'] . '">
+          <label for="permiso_' . $val2['idpermiso'] . '" class="label-primary"></label><span class="ms-3">' . $val2['submodulo'] . '</span>
+        </div>';
+      }  
+      echo '</div>';
     }
     echo '</div>';
   break;
 
-  // case 'permisosEmpresaTodos':
-  //   //Obtenemos todos los permisos de la tabla permisos
-  //   require_once "../modelos/Permiso.php";
-  //   $permiso = new Permiso();
-  //   $rspta = $permiso->listarEmpresa();
-  //   $marcados = $usuario->listarmarcadosEmpresaTodos();
-  //   //Declaramos el array para almacenar todos los permisos marcados
-  //   $valores = array();
+  case 'permisos_docente':
+    //Obtenemos todos los permisos de la tabla permisos
+    require_once "../modelos/Permiso.php";
+    $permiso = new Permiso();
+    $rspta = $permiso->listar_permisos_docente();
 
-  //   //Almacenar los permisos asignados al usuario en el array
-  //   while ($per = $marcados['data']->fetch_object()) {
-  //     array_push($valores, $per->idempresa);
-  //   }
+    $id = $_GET['id'];
+    $marcados = $usuario->listarmarcados($id); # Obtener los permisos asignados al usuario
 
-  //   //Mostramos la lista de permisos en la vista y si están o no marcados
-  //   echo '<div class="row gy-2" >';
-  //   foreach ($rspta['data'] as $key => $val) {
-  //     if ($key % 3 === 0) {   echo '<div class="col-lg-3" >';   } # abrimos el: col-lg-2
-  //     echo '<div class="custom-toggle-switch d-flex align-items-center mb-1">
-  //       <input id="empresa_' . $val['idempresa'] . '"  name="empresa[]" value="' . $val['idempresa'] . '" type="checkbox" >
-  //       <label for="empresa_' . $val['idempresa'] . '" class="label-primary"></label><span class="ms-3">' . $val['nombre_razon_social'] . '</span>
-  //     </div>';
-  //     if (($key + 1) % 3 === 0 || $key === count($rspta['data']) - 1) { echo "</div>"; } # cerramos el: col-lg-2
-  //   }
-  //   echo '</div>';
-  // break;
+    $valores = array(); # Declaramos el array para almacenar todos los permisos marcados
+
+    foreach ($marcados['data'] as $key => $val) { array_push($valores, $val['idpermiso']); } # Almacenar los permisos asignados al usuario en el array
+
+    //Mostramos la lista de permisos en la vista y si están o no marcados
+    echo '<div class="row gy-2" >';
+    foreach ($rspta['data']['agrupado'] as $key => $val1) {   
+      echo '<div class="col-lg-4 col-xl-3 col-xxl-3 mt-3" >';
+      echo '<span >'.$val1['modulo'].'</span>';
+      foreach ($val1['submodulo'] as $key => $val2) {
+        $sw = in_array($val2['idpermiso'], $valores) ? 'checked' : '';
+        echo '<div class="custom-toggle-switch d-flex align-items-center mt-2 mb-2">
+          <input id="permiso_' . $val2['idpermiso'] . '" name="permiso[]" type="checkbox" ' . $sw . ' value="' . $val2['idpermiso'] . '">
+          <label for="permiso_' . $val2['idpermiso'] . '" class="label-primary"></label><span class="ms-3">' . $val2['submodulo'] . '</span>
+        </div>';
+      }  
+      echo '</div>';
+    }
+    echo '</div>';
+  break;
+
+// MAS PERMISOS ==========================================================================
 
   case 'series':
     //Obtenemos todos los permisos de la tabla permisos
@@ -295,6 +298,7 @@ switch ($_GET["op"]) {
       $_SESSION['user_cargo']     = $rspta['data']['usuario']['cargo'];
       $_SESSION['user_imagen']    = $rspta['data']['usuario']['foto_perfil'];
       $_SESSION['user_login']     = $rspta['data']['usuario']['login'];
+      $_SESSION['nivel_autoridad']  = $rspta['data']['usuario']['nivel_autoridad'];
 
       // $_SESSION['idusuario_empresa']  = $rspta['data']['sucursal']['idusuario_empresa'];
       // $_SESSION['idempresa']          = $rspta['data']['sucursal']['idempresa'];
@@ -317,7 +321,7 @@ switch ($_GET["op"]) {
       
       foreach ($grupo['data'] as $key => $val) { array_push($valores_agrupado, $val['modulo']);  }  # Almacenamos los permisos marcados en el array
                
-      in_array(1, $valores) ? $_SESSION['dashboard']                = 1 : $_SESSION['dashboard']                = 0;
+      in_array(1, $valores) ? $_SESSION['dashboard_empresa']        = 1 : $_SESSION['dashboard_empresa']        = 0;
       in_array(2, $valores) ? $_SESSION['empresa']                  = 1 : $_SESSION['empresa']                  = 0;
       in_array(3, $valores) ? $_SESSION['nosotros']                 = 1 : $_SESSION['nosotros']                 = 0;
       in_array(4, $valores) ? $_SESSION['sucursales']               = 1 : $_SESSION['sucursales']               = 0;

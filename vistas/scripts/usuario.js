@@ -15,9 +15,9 @@ function init() {
   // ══════════════════════════════════════ I N I T I A L I Z E   S E L E C T 2 ══════════════════════════════════════  
   $("#idpersona").select2({  theme: "bootstrap4", placeholder: "Seleccione", allowClear: true, });
 
-	$.post("../ajax/usuario.php?op=permisos&id=", function (r) {	$("#permisos").html(r);	}).fail( function(e) { ver_errores(e); } );
-	// $.post("../ajax/usuario.php?op=series&id=", function (r) {	$("#series").html(r);	}).fail( function(e) { ver_errores(e); } );
-	// $.post("../ajax/usuario.php?op=permisosEmpresaTodos", function (r) {	$("#empresas").html(r);	});
+	$.post("../ajax/usuario.php?op=permisos_empresa&id=", function (r) {	$("#permisos_empresa").html(r);	}).fail( function(e) { ver_errores(e); } );
+	$.post("../ajax/usuario.php?op=permisos_coordinador&id=", function (r) {	$("#permisos_coordinador").html(r);	}).fail( function(e) { ver_errores(e); } );
+	$.post("../ajax/usuario.php?op=permisos_docente&id=", function (r) {	$("#permisos_docente").html(r);	}).fail( function(e) { ver_errores(e); } );
 }
 
 //Función limpiar
@@ -42,8 +42,9 @@ function limpiar_form() {
 }
 
 function reload_ps() {
-  $.post("../ajax/usuario.php?op=permisos&id=", function (r) { $("#permisos").html(r); }).fail( function(e) { ver_errores(e); } );
-  $.post("../ajax/usuario.php?op=series&id=", function (r) { $("#series").html(r); }).fail( function(e) { ver_errores(e); } );
+  $.post("../ajax/usuario.php?op=permisos_empresa&id=", function (r) { $("#permisos_empresa").html(r); }).fail( function(e) { ver_errores(e); } );
+  $.post("../ajax/usuario.php?op=permisos_coordinador&id=", function (r) { $("#permisos_coordinador").html(r); }).fail( function(e) { ver_errores(e); } );
+  $.post("../ajax/usuario.php?op=permisos_docente&id=", function (r) { $("#permisos_docente").html(r); }).fail( function(e) { ver_errores(e); } );
 }
 
 function show_hide_form(flag) {
@@ -180,8 +181,8 @@ function guardar_y_editar_usuario(e) {
 function mostrar(idusuario) {
   limpiar_form();
 	show_hide_form(2);
-	$('#cargando-1-fomulario').hide();	$('#cargando-2-fomulario').show();
-	$('#cargando-3-fomulario').hide();	$('#cargando-4-fomulario').show();  
+	$('#cargando-1-fomulario').show();	$('#cargando-2-fomulario').hide();
+	$('#cargando-3-fomulario').show();	$('#cargando-4-fomulario').hide();  
 	
 	$.post("../ajax/usuario.php?op=mostrar", { idusuario: idusuario }, function (e, status) {
 		e = JSON.parse(e);
@@ -199,14 +200,14 @@ function mostrar(idusuario) {
         
         $("#clave").rules( "remove", "required" );
 
-        $.post("../ajax/usuario.php?op=permisos&id=" + idusuario, function (e3) {
-          $("#permisos").html(e3);
-          $.post("../ajax/usuario.php?op=series&id=" + idusuario, function (e4) {
-            $("#series").html(e4);
-            $('#cargando-1-fomulario').show();	$('#cargando-2-fomulario').hide();
-            $('#cargando-3-fomulario').show();	$('#cargando-4-fomulario').hide();
-            $('#form-agregar-usuario').valid();
-          }).fail( function(e) { ver_errores(e); } );
+        $.post("../ajax/usuario.php?op=permisos_empresa&id=" + idusuario, function (e3) {
+          $("#permisos_empresa").html(e3);
+        }).fail( function(e) { ver_errores(e); } );
+        $.post("../ajax/usuario.php?op=permisos_coordinador&id=" + idusuario, function (e3) {
+          $("#permisos_coordinador").html(e3);
+        }).fail( function(e) { ver_errores(e); } );
+        $.post("../ajax/usuario.php?op=permisos_docente&id=" + idusuario, function (e3) {
+          $("#permisos_docente").html(e3);
         }).fail( function(e) { ver_errores(e); } );
       }).fail( function(e) { ver_errores(e); } );
     } else {

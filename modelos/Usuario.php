@@ -14,11 +14,9 @@ class Usuario
   }
 
 	//Implementamos un método para insertar registros
-	public function insertar($idpersona, $login, $clavehash, $permisos, $series)	{
+	public function insertar($idpersona, $login, $clavehash, $permisos)	{
 
-		if (empty($permisos)) {	return [ 'status'=>'error_usuario', 'user'=> $_SESSION['user_nombre'], 'message'=>'No se ha selecionado los permisos de <b>MÓDULOS</b>','data'=>  []  ]; 	}
-		if (empty($series)) {	return [ 'status'=>'error_usuario', 'user'=> $_SESSION['user_nombre'], 'message'=>'No se ha selecionado los permisos de <b>SERIES</b>','data'=>  []  ]; 	}
-		
+		if (empty($permisos)) {	return [ 'status'=>'error_usuario', 'user'=> $_SESSION['user_nombre'], 'message'=>'No se ha selecionado los permisos de <b>MÓDULOS</b>','data'=>  []  ]; 	}		
      
 		$sql = "INSERT INTO usuario( idpersona, login, password) VALUES ('$idpersona','$login','$clavehash')";
 		$id_new = ejecutarConsulta_retornarID($sql, 'C');	if ($id_new['status'] == false) {  return $id_new; } 		
@@ -31,22 +29,15 @@ class Usuario
 			$sql_detalle = "INSERT into usuario_permiso(idusuario, idpermiso) values ('$id', '$permisos[$zz]')";
 			$usr_permiso = ejecutarConsulta($sql_detalle, 'C'); if ($usr_permiso['status'] == false) {  return $usr_permiso; } 
 			$zz = $zz + 1;
-		}
-
-		while ($yy < count($series)) {
-			$sql_detalle_series = "INSERT into sunat_usuario_comprobante(idusuario, idtipo_comprobante) values ('$id', '$series[$yy]')";
-			$usr_num = ejecutarConsulta($sql_detalle_series, 'C'); if ($usr_num['status'] == false) {  return $usr_num; } 
-			$yy = $yy + 1;
-		}		
+		}	
 
     return $id_new;
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idusuario, $idpersona, $login, $clavehash, $permisos, $series) {
+	public function editar($idusuario, $idpersona, $login, $clavehash, $permisos) {
 
 		if (empty($permisos)) {	return [ 'status'=>'error_usuario', 'user'=> $_SESSION['user_nombre'], 'message'=>'No se ha selecionado los permisos de <b>MÓDULOS</b>','data'=>  []  ]; 	}
-		if (empty($series)) {	return [ 'status'=>'error_usuario', 'user'=> $_SESSION['user_nombre'], 'message'=>'No se ha selecionado los permisos de <b>SERIES</b>','data'=>  []  ]; 	}
 		
 
 		$sql = "UPDATE usuario SET idpersona='$idpersona', login='$login', password='$clavehash' WHERE idusuario='$idusuario'";
@@ -56,8 +47,6 @@ class Usuario
 		$sqldel = "DELETE from usuario_permiso where 	idusuario='$idusuario'";
 		$del_up = ejecutarConsulta($sqldel); if ($del_up['status'] == false) {  return $del_up; }
 
-		$sqldelSeries = "DELETE from sunat_usuario_comprobante where idusuario='$idusuario'";
-		$del_suc = ejecutarConsulta($sqldelSeries); if ($del_suc['status'] == false) {  return $del_suc; }
 
 		$zz = 0;
 		$yy = 0;
@@ -67,12 +56,7 @@ class Usuario
 			$usr_permiso = ejecutarConsulta($sql_detalle, 'C'); if ($usr_permiso['status'] == false) {  return $usr_permiso; } 
 			$zz = $zz + 1;
 		}
-
-		while ($yy < count($series)) {
-			$sql_detalle_series = "INSERT into sunat_usuario_comprobante(idusuario, idtipo_comprobante) values ('$idusuario', '$series[$yy]')";
-			$usr_num = ejecutarConsulta($sql_detalle_series, 'C'); if ($usr_num['status'] == false) {  return $usr_num; } 
-			$yy = $yy + 1;
-		}		
+	
 
     return $edit_user;		
 	}
@@ -208,7 +192,7 @@ class Usuario
 	public function verificar($login, $clave)	{
 
 		$sql = "SELECT u.idusuario, u.idpersona, pt.idpersona_trabajador, p.nombre_razonsocial, p.apellidos_nombrecomercial, p.tipo_documento, p.numero_documento, 
-		p.celular, p.correo, ct.nombre as cargo, u.login, p.foto_perfil, p.tipo_documento
+		p.celular, p.correo, ct.nombre as cargo, u.login, p.foto_perfil, p.tipo_documento, ct.nivel_autoridad
 		FROM usuario as u
 		INNER JOIN persona as p ON p.idpersona = u.idpersona
 		INNER JOIN cargo_trabajador as ct ON ct.idcargo_trabajador = p.idcargo_trabajador

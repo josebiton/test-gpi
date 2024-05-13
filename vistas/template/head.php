@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><?php echo $title_page; ?> | GPI</title>
 <meta name="Description" content="Sistema de Facturacion Electronica">
-<meta name="Author" content="JDL TECNOLOGY SAC">
+<meta name="Author" content="DFS INGENIEROS">
 <meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
 
 <!-- Favicon -->
