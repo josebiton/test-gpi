@@ -10,10 +10,6 @@ Class Permiso
 
 	}
 	
-	public function listar() {
-		$sql="SELECT * from permiso where not idpermiso in('6','7') ";
-		return ejecutarConsulta($sql);		
-	}
 
 	public function listar_permisos_empresa() {
 

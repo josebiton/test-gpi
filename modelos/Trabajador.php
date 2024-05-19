@@ -139,7 +139,7 @@ class Trabajador
 
 	//Implementar un método para listar los registros
 	public function listar_tabla_principal()	{
-		$sql = "SELECT p.*, pt.idpersona_trabajador, pt.ruc, pt.sueldo_mensual, pt.sueldo_diario, t.nombre as tipo_persona, c.nombre as cargo_trabajador, sdi.abreviatura as tipo_documento
+		$sql = "SELECT p.*, pt.idpersona_trabajador, pt.ruc, pt.sueldo_mensual, pt.sueldo_diario, t.nombre as tipo_persona, c.nombre as cargo_trabajador, sdi.abreviatura as tipo_documento, pt.estado
 		FROM  persona as p
 		inner join persona_trabajador as pt on pt.idpersona = p.idpersona
 		INNER JOIN tipo_persona as t ON t.idtipo_persona = p.idtipo_persona

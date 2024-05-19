@@ -7,7 +7,7 @@ if (!isset($_SESSION["user_nombre"])) {
   echo json_encode($retorno);  //Validamos el acceso solo a los usuarios logueados al sistema.
 } else {
 
-  if ($_SESSION['trabajador'] == 1) {
+  if ($_SESSION['Trabajador'] == 1) {
     
     require_once "../modelos/Trabajador.php";
 
@@ -140,7 +140,7 @@ if (!isset($_SESSION["user_nombre"])) {
             "4" => $reg->cargo_trabajador,
             "5" => '<a href="tel:+51'.$reg->celular.'">'.$reg->celular.'</a>',
             "6" => '<textarea cols="30" rows="2" class="textarea_datatable bg-light" readonly="">'.$reg->direccion.'</textarea>',
-            "7" =>  '<span class="badge bg-outline-warning cursor-pointer font-size-12px" onclick="clientes_x_trabajador('.$reg->idpersona_trabajador.');" data-bs-toggle="tooltip" title="Ver clientes">nulo</span>',
+            "7" =>  ($reg->estado) ? '<span class="badge bg-success-transparent">Activado</span>' : '<span class="badge bg-danger-transparent">Inhabilitado</span>',
             
             "8" => $reg->nombre_razonsocial .' '. $reg->apellidos_nombrecomercial,
             "9" => $reg->tipo_documento,

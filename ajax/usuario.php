@@ -298,38 +298,31 @@ switch ($_GET["op"]) {
       $_SESSION['user_cargo']     = $rspta['data']['usuario']['cargo'];
       $_SESSION['user_imagen']    = $rspta['data']['usuario']['foto_perfil'];
       $_SESSION['user_login']     = $rspta['data']['usuario']['login'];
-      $_SESSION['nivel_autoridad']  = $rspta['data']['usuario']['nivel_autoridad'];
 
-      // $_SESSION['idusuario_empresa']  = $rspta['data']['sucursal']['idusuario_empresa'];
-      // $_SESSION['idempresa']          = $rspta['data']['sucursal']['idempresa'];
-      // $_SESSION['empresa_nrs']        = $rspta['data']['sucursal']['nombre_razon_social'];    
-      // $_SESSION['empresa_nc']         = $rspta['data']['sucursal']['nombre_comercial'];
-      // $_SESSION['empresa_ruc']        = $rspta['data']['sucursal']['numero_ruc'];     
-      // $_SESSION['empresa_domicilio']  = $rspta['data']['sucursal']['domicilio_fiscal'];        
-      // $_SESSION['empresa_iva']        = $rspta['data']['sucursal']['igv'];
+      //Declaramos las variables de empresa
+      $_SESSION['idempresa']      = $rspta['data']['usuario']['idempresa'];
+      $_SESSION['razon_social']   = $rspta['data']['usuario']['razon_social'];
+      $_SESSION['sucursal']       = $rspta['data']['usuario']['nombre_sucursal'];
+      $_SESSION['departamento']   = $rspta['data']['usuario']['nombre_dept'];
+      $_SESSION['sub_departamento'] = $rspta['data']['usuario']['nombre_subdept'];
+      $_SESSION['dept_operativo'] = $rspta['data']['usuario']['nombre_operativo'];
 
-      // $_SESSION['estadotempo']        = $rspta3['data']['estado'];      
+      
       
       $marcados = $usuario->listarmarcados($rspta['data']['usuario']['idusuario']);         # Obtenemos los permisos del usuario
-      $grupo    = $usuario->listar_grupo_marcados($rspta['data']['usuario']['idusuario']);  # Obtenemos los permisos del usuario
-      // $usuario->savedetalsesion($rspta['data']['usuario']['idusuario']);                 # Guardamos los datos del usuario al iniciar sesion.
 
       $valores = array();           # Declaramos el array para almacenar todos los permisos marcados
-      $valores_agrupado = array();  # Declaramos el array para almacenar todos los permisos marcados
 
       foreach ($marcados['data'] as $key => $val) { array_push($valores, $val['idpermiso']);  } # Almacenamos los permisos marcados en el array      
       
-      foreach ($grupo['data'] as $key => $val) { array_push($valores_agrupado, $val['modulo']);  }  # Almacenamos los permisos marcados en el array
                
-      in_array(1, $valores) ? $_SESSION['dashboard_empresa']        = 1 : $_SESSION['dashboard_empresa']        = 0;
-      in_array(2, $valores) ? $_SESSION['empresa']                  = 1 : $_SESSION['empresa']                  = 0;
-      in_array(3, $valores) ? $_SESSION['nosotros']                 = 1 : $_SESSION['nosotros']                 = 0;
-      in_array(4, $valores) ? $_SESSION['sucursales']               = 1 : $_SESSION['sucursales']               = 0;
-      in_array(5, $valores) ? $_SESSION['departamentos']            = 1 : $_SESSION['departamentos']            = 0;
-      in_array(6, $valores) ? $_SESSION['subdepartamentos']         = 1 : $_SESSION['subdepartamentos']         = 0;
-      in_array(7, $valores) ? $_SESSION['departamentos_operativos'] = 1 : $_SESSION['departamentos_operativos'] = 0;
-      in_array(8, $valores) ? $_SESSION['usuario']                  = 1 : $_SESSION['usuario']                  = 0;
-      in_array(8, $valores) ? $_SESSION['trabajador']               = 1 : $_SESSION['trabajador']               = 0;
+      in_array(1, $valores) ? $_SESSION['Dashboard PI']       = 1 : $_SESSION['Dashboard PI']       = 0;
+      in_array(2, $valores) ? $_SESSION['Dashboard Docente']  = 1 : $_SESSION['Dashboard Docente']  = 0;
+      in_array(3, $valores) ? $_SESSION['Usuario']            = 1 : $_SESSION['Usuario']            = 0;
+      in_array(4, $valores) ? $_SESSION['Trabajador']         = 1 : $_SESSION['Trabajador']         = 0;
+      in_array(5, $valores) ? $_SESSION['Tareas']             = 6 : $_SESSION['Tareas']             = 0;
+      in_array(6, $valores) ? $_SESSION['Equipos']            = 6 : $_SESSION['Equipos']            = 0;
+
       
 
       $data = [ 'status'=>true, 'message'=>'todo okey','data'=> $rspta['data']  ];

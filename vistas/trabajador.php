@@ -3,7 +3,9 @@
   ob_start();
   date_default_timezone_set('America/Lima'); require "../config/funcion_general.php";
   session_start();
-  if (isset($_SESSION["user_nombre"]) && $_SESSION["nivel_autoridad"] == "Nivel_1"){
+  if (!isset($_SESSION["user_nombre"])){
+    header("Location: index.php");
+  }else{
     ?>
       <!DOCTYPE html>
       <html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="icon-overlay-close" loader="enable">
@@ -22,7 +24,7 @@
           <div class="page">
             <?php include("template/header.php") ?>
             <?php include("template/sidebar.php") ?>
-            <?php if($_SESSION['trabajador'] == 1) { ?>
+            <?php if($_SESSION['Trabajador'] == 1) { ?>
 
             <!-- Start::app-content -->
             <div class="main-content app-content ">
@@ -474,9 +476,7 @@
 
       </html>
     <?php
-  }else{
     
-    header("Location: index.php?file=".basename($_SERVER['PHP_SELF']));
   }
   ob_end_flush();
 

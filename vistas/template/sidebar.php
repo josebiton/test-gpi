@@ -25,12 +25,14 @@
         </svg>
       </div>
       <ul class="main-menu">
-        <!-- Start::slide__category -->
+
+
+        <!-- Start::slide__category ================================================================== -->
         <li class="slide__category"><span class="category-name">I N I C I O</span></li>
         <!-- End::slide__category -->
 
         <!-- Start::slide -->
-        <?php  if ($_SESSION['dashboard_empresa'] == '1') { ?>
+        <?php  if ($_SESSION['Dashboard PI'] == '1') { ?>
         <li class="slide">
           <a href="escritorio.php" class="side-menu__item">
             <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label"> Dashboards</span>
@@ -39,95 +41,65 @@
         <?php } ?>
         <!-- End::slide -->
 
-        <!-- Start::slide__category -->
+        <!-- Start::slide -->
+        <?php  if ($_SESSION['Dashboard Docente'] == '1') { ?>
+        <li class="slide">
+          <a href="escritorio.php" class="side-menu__item">
+            <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label"> Dashboards</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::slide -->
+
+
+
+        <!-- Start::slide__category ================================================================== -->
         <li class="slide__category"><span class="category-name">L O G I S T I C A</span></li>
         <!-- End::slide__category -->
 
         <!-- Start::slide -->
-        <?php  if ($_SESSION['empresa'] == '1') { ?>
-        <li class="slide">
-          <a href="empresa.php" class="side-menu__item">
-            <i class="bx bx-building side-menu__icon"></i><span class="side-menu__label"> Empresa</span>
-          </a>
-        </li>
-        <?php } ?>
-        <!-- End::slide -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['nosotros'] == '1') { ?>
-        <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-extension side-menu__icon"></i><span class="side-menu__label"> Nosotros</span>
-          </a>
-        </li>
-        <?php } ?>
-        <!-- End::slide -->
-
-
-
-        <!-- Start::slide__category -->
-        <li class="slide__category"><span class="category-name">E S T R U C T U R A</span></li>
-        <!-- End::slide__category -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['sucursales'] == '1') { ?>
-        <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-buildings side-menu__icon"></i><span class="side-menu__label"> sucursales</span>
-          </a>
-        </li>
-        <?php } ?>
-        <!-- End::slide -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['departamentos'] == '1') { ?>
-        <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-sitemap side-menu__icon"></i><span class="side-menu__label"> departamentos</span>
-          </a>
-        </li>
-        <?php } ?>
-        <!-- End::slide -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['subdepartamentos'] == '1') { ?>
-        <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-network-chart side-menu__icon"></i><span class="side-menu__label"> Subdepartamentos</span>
-          </a>
-        </li>
-        <?php } ?>
-        <!-- End::slide -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['departamentos_operativos'] == '1') { ?>
-        <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-home side-menu__icon side-menu__icon"></i><span class="side-menu__label"> departamentos_operativos</span>
-          </a>
-        </li>
-        <?php } ?>
-        <!-- End::slide -->
-
-        <!-- Start::slide__category -->
-        <li class="slide__category"><span class="category-name">A D M I N I S T R A C I Ó N</span></li>
-        <!-- End::slide__category -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['usuario'] == '1') { ?>
+        <?php  if ($_SESSION['Usuario'] == '1') { ?>
         <li class="slide">
           <a href="usuario.php" class="side-menu__item">
-            <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label">Usuario</span>
+          <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label"> Usuario</span>
           </a>
         </li>
         <?php } ?>
         <!-- End::slide -->
 
         <!-- Start::slide -->
-        <?php  if ($_SESSION['trabajador'] == '1') { ?>
+        <?php  if ($_SESSION['Trabajador'] == '1') { ?>
         <li class="slide">
           <a href="trabajador.php" class="side-menu__item">
-            <i class="bx bx-briefcase side-menu__icon"></i><span class="side-menu__label">Trabajador</span>
+          <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label"> Trabajador</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::slide -->
+
+
+
+        <!-- Start::slide__category ================================================================== -->
+        <?php  if ($_SESSION['Tareas'] == '6') { ?>
+        <li class="slide__category"><span class="category-name">P R O C E S O S</span></li>
+        <?php } ?>
+        <!-- End::slide__category -->
+
+        <!-- Start::slide -->
+        <?php  if ($_SESSION['Tareas'] == '6') { ?>
+        <li class="slide">
+          <a href="tareas.php" class="side-menu__item">
+            <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label">Tareas</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::slide -->
+
+        <!-- Start::slide -->
+        <?php  if ($_SESSION['Equipos'] == '6') { ?>
+        <li class="slide">
+          <a href="equipos.php" class="side-menu__item">
+            <i class="bx bx-briefcase side-menu__icon"></i><span class="side-menu__label">Equipos</span>
           </a>
         </li>
         <?php } ?>

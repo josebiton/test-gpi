@@ -173,16 +173,6 @@ class Usuario
 			
 	}
 
-	public function listarmarcadosEmpresa($idusuario)	{
-		$sql = "SELECT * from usuario_empresa where idusuario='$idusuario'";
-		return ejecutarConsulta($sql);
-	}
-
-	// public function listarmarcadosEmpresaTodos()	{
-	// 	$sql = "SELECT * from usuario_empresa ";
-	// 	return ejecutarConsulta($sql);
-	// }
-
 	public function listarmarcadosNumeracion($idusuario)	{
 		$sql = "SELECT * from sunat_usuario_comprobante where idusuario='$idusuario'";
 		return ejecutarConsulta($sql);
@@ -191,24 +181,25 @@ class Usuario
 	//Funcion para verificar el acceso al sistema
 	public function verificar($login, $clave)	{
 
-		$sql = "SELECT u.idusuario, u.idpersona, pt.idpersona_trabajador, p.nombre_razonsocial, p.apellidos_nombrecomercial, p.tipo_documento, p.numero_documento, 
-		p.celular, p.correo, ct.nombre as cargo, u.login, p.foto_perfil, p.tipo_documento, ct.nivel_autoridad
-		FROM usuario as u
-		INNER JOIN persona as p ON p.idpersona = u.idpersona
-		INNER JOIN cargo_trabajador as ct ON ct.idcargo_trabajador = p.idcargo_trabajador
-		INNER JOIN persona_trabajador as pt ON pt.idpersona = p.idpersona
-    WHERE u.login='$login' AND u.password='$clave' AND p.estado=1 and p.estado_delete=1 and u.estado=1 and u.estado_delete=1;";
+		$sql = "SELECT e.idempresa, s.idsucursal, d.iddepartamento, sd.idsub_dept, dop.iddept_operativo, u.idusuario, p.idpersona, pt.idpersona_trabajador,
+		e.razon_social, s.nombre_sucursal, d.nombre_dept, sd.nombre_subdept, dop.nombre_operativo,
+		p.nombre_razonsocial, p.apellidos_nombrecomercial, ct.nombre AS cargo, 
+		p.tipo_documento, p.numero_documento, p.celular, p.correo, 
+		u.login, p.foto_perfil
+		FROM usuario AS u
+		INNER JOIN persona AS p ON u.idpersona = p.idpersona
+		INNER JOIN persona_trabajador AS pt ON p.idpersona = pt.idpersona
+		INNER JOIN cargo_trabajador AS ct ON p.idcargo_trabajador = ct.idcargo_trabajador
+		INNER JOIN detalle_usuario_empresa AS due ON u.idusuario = due.idusuario
+		INNER JOIN empresa AS e ON due.idempresa = e.idempresa
+		INNER JOIN sucursal AS s ON due.idsucursal = s.idsucursal
+		INNER JOIN departamento AS d ON due.iddepartamento = d.iddepartamento
+		LEFT JOIN sub_departamento AS sd ON due.idsub_dept = sd.idsub_dept
+		LEFT JOIN departamento_operativo AS dop ON due.iddept_operativo = dop.iddept_operativo
+		WHERE u.login = '$login' AND u.password = '$clave'
+		AND u.estado = 1 AND u.estado_delete = 1 AND p.estado = 1 AND p.estado_delete = 1
+		AND e.estado = 1 AND e.estado_delete = 1 AND s.estado = 1 AND s.estado_delete = 1;";
 		$user = ejecutarConsultaSimpleFila($sql); if ($user['status'] == false) {  return $user; } 
-
-		// $id_user =  empty($user['data']) ? '' : $user['data']['idusuario'];
-
-		// $sql2 = "SELECT ue.*, u.nombre as nombre_usuario, u.apellidos as apellido_usuario, e.nombre_razon_social, e.nombre_comercial, e.domicilio_fiscal, e.numero_ruc, co.igv 
-		// FROM usuario_empresa as ue
-		// INNER JOIN usuario AS u ON u.idusuario = ue.idusuario
-		// INNER JOIN empresa as e ON e.idempresa = ue.idempresa
-		// inner join configuraciones co on e.idempresa=co.idempresa 
-		// WHERE ue.idusuario = '$id_user'";
-		// $sucursal = ejecutarConsultaSimpleFila($sql2); if ($sucursal['status'] == false) {  return $sucursal; }
 
 		$data = [ 'status'=>true, 'message'=>'todo okey','data'=> ['usuario' => $user['data']]  ];
     return $data;
