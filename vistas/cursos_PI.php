@@ -12,7 +12,7 @@
 
         <head>
           
-          <?php $title_page = "Trabajadores"; include("template/head.php"); ?>    
+          <?php $title_page = "Cursos PI"; include("template/head.php"); ?>    
 
         </head> 
 
@@ -24,7 +24,7 @@
           <div class="page">
             <?php include("template/header.php") ?>
             <?php include("template/sidebar.php") ?>
-            <?php if($_SESSION['Trabajador'] == 1) { ?>
+            <?php if($_SESSION['Cursos PI'] == 1) { ?>
 
             <!-- Start::app-content -->
             <div class="main-content app-content ">
@@ -38,8 +38,8 @@
                       <button type="button" class="btn btn-danger btn-cancelar m-r-10px" onclick="show_hide_form(1);" style="display: none;"><i class="ri-arrow-left-line"></i></button>
                       <button class="btn-modal-effect btn btn-success label-btn btn-guardar m-r-10px" style="display: none;"  > <i class="ri-save-2-line label-btn-icon me-2" ></i> Guardar </button>
                       <div>
-                        <p class="fw-semibold fs-18 mb-0">Lista de Trabajadores del sistema!</p>
-                        <span class="fs-semibold text-muted">Adminstra de manera eficiente tus trabajadores.</span>
+                        <p class="fw-semibold fs-18 mb-0">Cursos Afiliados al PI</p>
+                        <span class="fs-semibold text-muted">Adminstra de manera eficiente los cursos afiliados al PI.</span>
                       </div>                
                     </div>
                   </div>
@@ -47,8 +47,8 @@
                   <div class="btn-list mt-md-0 mt-2">              
                     <nav>
                       <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Planilla</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Trabajador</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Administración</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cursos PI</li>
                       </ol>
                     </nav>
                   </div>
@@ -62,12 +62,12 @@
                     <div class="card custom-card ">                  
                       <div class="card-body">
                         <div id="div-tabla" class="table-responsive">
-                          <table id="tabla-usuario" class="table table-bordered w-100" style="width: 100%;">
+                          <table id="tabla-cursos-pi" class="table table-bordered w-100" style="width: 100%;">
                             <thead>
                               <tr>
                                 <th>#</th>
                                 <th>Opciones</th>                          
-                                <th>Nombre</th>
+                                <th>Asignatura</th>
                                 <th>Edad</th>
                                 <th>Cargo</th>                          
                                 <th>Teléfono</th>

@@ -290,9 +290,9 @@ switch ($_GET["op"]) {
       //Declaramos las variables de sesión
       $_SESSION['idusuario']      = $rspta['data']['usuario']['idusuario'];
       $_SESSION['idpersona']      = $rspta['data']['usuario']['idpersona'];
-      $_SESSION['idpersona_trabajador'] = $rspta['data']['usuario']['idpersona_trabajador'];
-      $_SESSION['user_nombre']    = $rspta['data']['usuario']['nombre_razonsocial'];
-      $_SESSION['user_apellido']  = $rspta['data']['usuario']['apellidos_nombrecomercial'];
+      $_SESSION['idpersonal_pi']  = $rspta['data']['usuario']['idpersonal_pi'];
+      $_SESSION['user_nombre']    = $rspta['data']['usuario']['nombres'];
+      $_SESSION['user_apellido']  = $rspta['data']['usuario']['apellidos'];
       $_SESSION['user_tipo_doc']  = $rspta['data']['usuario']['tipo_documento'];
       $_SESSION['user_num_doc']   = $rspta['data']['usuario']['numero_documento'];
       $_SESSION['user_cargo']     = $rspta['data']['usuario']['cargo'];
@@ -303,9 +303,8 @@ switch ($_GET["op"]) {
       $_SESSION['idempresa']      = $rspta['data']['usuario']['idempresa'];
       $_SESSION['razon_social']   = $rspta['data']['usuario']['razon_social'];
       $_SESSION['sucursal']       = $rspta['data']['usuario']['nombre_sucursal'];
-      $_SESSION['departamento']   = $rspta['data']['usuario']['nombre_dept'];
-      $_SESSION['sub_departamento'] = $rspta['data']['usuario']['nombre_subdept'];
-      $_SESSION['dept_operativo'] = $rspta['data']['usuario']['nombre_operativo'];
+      $_SESSION['facultad']       = $rspta['data']['usuario']['nombre_facultad'];
+      $_SESSION['carrera']        = $rspta['data']['usuario']['nombre_carrera'];
 
       
       
@@ -319,9 +318,10 @@ switch ($_GET["op"]) {
       in_array(1, $valores) ? $_SESSION['Dashboard PI']       = 1 : $_SESSION['Dashboard PI']       = 0;
       in_array(2, $valores) ? $_SESSION['Dashboard Docente']  = 1 : $_SESSION['Dashboard Docente']  = 0;
       in_array(3, $valores) ? $_SESSION['Usuario']            = 1 : $_SESSION['Usuario']            = 0;
-      in_array(4, $valores) ? $_SESSION['Trabajador']         = 1 : $_SESSION['Trabajador']         = 0;
-      in_array(5, $valores) ? $_SESSION['Tareas']             = 6 : $_SESSION['Tareas']             = 0;
-      in_array(6, $valores) ? $_SESSION['Equipos']            = 6 : $_SESSION['Equipos']            = 0;
+      in_array(4, $valores) ? $_SESSION['Catedraticos']       = 1 : $_SESSION['Catedraticos']       = 0;
+      in_array(5, $valores) ? $_SESSION['Tareas']             = 1 : $_SESSION['Tareas']             = 0;
+      in_array(6, $valores) ? $_SESSION['Equipos']            = 1 : $_SESSION['Equipos']            = 0;
+      in_array(6, $valores) ? $_SESSION['Afiliar Cursos']     = 1 : $_SESSION['Afiliar Cursos']     = 0;
 
       
 

@@ -969,7 +969,7 @@ function buscar_sunat_reniec(input='', tipo_documento, dniruc, nombre, apellido,
 
   let dni_ruc = $(dniruc).val(); 
    
-  if (tipo_doc == "1") { // DNI
+  if (tipo_doc == "DNI") { // DNI
 
     if (dni_ruc.length == "8") {
 
@@ -1009,7 +1009,7 @@ function buscar_sunat_reniec(input='', tipo_documento, dniruc, nombre, apellido,
       $(nombre).val(''); $(apellido).val(''); $(titular).val('');
       toastr_info('Alerta!!', 'Asegurese de que el DNI tenga 8 dígitos!!!', 700);
     }
-  } else if (tipo_doc == "6") {  // RUC
+  } else if (tipo_doc == "RUC") {  // RUC
 
     if (dni_ruc.length == "11") {
       $.post("../ajax/ajax_general.php?op=sunat_gpi", { ruc: dni_ruc }, function (data, status) {
@@ -1073,7 +1073,7 @@ function buscar_sunat_reniec(input='', tipo_documento, dniruc, nombre, apellido,
 
       toastr_info('Alerta!!', 'Asegurese de que el RUC tenga 11 dígitos!!!', 700);
     }
-  } else if (tipo_doc == "0" || tipo_doc == "4" || tipo_doc == "7") {    
+  } else if (tipo_doc == "NINGUNO" || tipo_doc == "CE" || tipo_doc == "PASAPORTE") {    
 
     $(`#search${input}`).show();  $(`#charge${input}`).hide();
     toastr_info('Alerta!!', 'No necesita hacer consulta.', 700);

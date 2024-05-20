@@ -181,24 +181,23 @@ class Usuario
 	//Funcion para verificar el acceso al sistema
 	public function verificar($login, $clave)	{
 
-		$sql = "SELECT e.idempresa, s.idsucursal, d.iddepartamento, sd.idsub_dept, dop.iddept_operativo, u.idusuario, p.idpersona, pt.idpersona_trabajador,
-		e.razon_social, s.nombre_sucursal, d.nombre_dept, sd.nombre_subdept, dop.nombre_operativo,
-		p.nombre_razonsocial, p.apellidos_nombrecomercial, ct.nombre AS cargo, 
-		p.tipo_documento, p.numero_documento, p.celular, p.correo, 
+		$sql = "SELECT u.idusuario, p.idpersona, pp.idpersonal_pi, cp.idcargo_personal, e.idempresa,
+		e.razon_social, s.nombre_sucursal, f.nombre_facultad, c.nombre_carrera,
+		p.nombres, p.apellidos, p.tipo_persona, cp.nombre AS cargo,
+		p.tipo_documento, p.numero_documento, p.celular, p.correo,
 		u.login, p.foto_perfil
 		FROM usuario AS u
 		INNER JOIN persona AS p ON u.idpersona = p.idpersona
-		INNER JOIN persona_trabajador AS pt ON p.idpersona = pt.idpersona
-		INNER JOIN cargo_trabajador AS ct ON p.idcargo_trabajador = ct.idcargo_trabajador
+		INNER JOIN personal_del_pi AS pp ON u.idpersona = p.idpersona
+		INNER JOIN cargo_personal AS cp ON pp.idcargo_personal = cp.idcargo_personal
 		INNER JOIN detalle_usuario_empresa AS due ON u.idusuario = due.idusuario
 		INNER JOIN empresa AS e ON due.idempresa = e.idempresa
 		INNER JOIN sucursal AS s ON due.idsucursal = s.idsucursal
-		INNER JOIN departamento AS d ON due.iddepartamento = d.iddepartamento
-		LEFT JOIN sub_departamento AS sd ON due.idsub_dept = sd.idsub_dept
-		LEFT JOIN departamento_operativo AS dop ON due.iddept_operativo = dop.iddept_operativo
+		LEFT JOIN facultad AS f ON due.idfacultad = f.idfacultad
+		LEFT JOIN carrera AS c ON due.idcarrera = c.idcarrera
 		WHERE u.login = '$login' AND u.password = '$clave'
-		AND u.estado = 1 AND u.estado_delete = 1 AND p.estado = 1 AND p.estado_delete = 1
-		AND e.estado = 1 AND e.estado_delete = 1 AND s.estado = 1 AND s.estado_delete = 1;";
+		AND u.estado = 1 AND u.estado_delete = 1
+		AND p.estado = 1 AND p.estado_delete = 1;";
 		$user = ejecutarConsultaSimpleFila($sql); if ($user['status'] == false) {  return $user; } 
 
 		$data = [ 'status'=>true, 'message'=>'todo okey','data'=> ['usuario' => $user['data']]  ];

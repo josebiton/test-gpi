@@ -53,6 +53,24 @@
 
 
 
+
+        <!-- Start::slide__category ================================================================== -->
+        <li class="slide__category"><span class="category-name">A D M I N I S T R A C I O N</span></li>
+        <!-- End::slide__category -->
+
+        <!-- Start::slide -->
+        <?php  if ($_SESSION['Afiliar Cursos'] == '1') { ?>
+        <li class="slide">
+          <a href="cursos_PI.php" class="side-menu__item">
+          <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label"> Afiliar Cursos</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::slide -->
+
+
+
+
         <!-- Start::slide__category ================================================================== -->
         <li class="slide__category"><span class="category-name">L O G I S T I C A</span></li>
         <!-- End::slide__category -->
@@ -68,10 +86,10 @@
         <!-- End::slide -->
 
         <!-- Start::slide -->
-        <?php  if ($_SESSION['Trabajador'] == '1') { ?>
+        <?php  if ($_SESSION['Catedraticos'] == '1') { ?>
         <li class="slide">
-          <a href="trabajador.php" class="side-menu__item">
-          <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label"> Trabajador</span>
+          <a href="catedraticos.php" class="side-menu__item">
+          <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label"> Catedraticos</span>
           </a>
         </li>
         <?php } ?>
