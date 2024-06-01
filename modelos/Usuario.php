@@ -141,14 +141,12 @@ class Usuario
 
 	//Implementar un método para listar los registros
 	public function listar()	{
-		$sql = "SELECT u.idusuario, p.idpersona, p.nombre_razonsocial, p.apellidos_nombrecomercial, sdi.abreviatura as tipo_documento, p.numero_documento, p.celular, 
-		p.correo,	p.foto_perfil, u.login, DATE_FORMAT(u.last_sesion, '%d/%m/%Y %h:%i %p') AS last_sesion, u.estado,	t.nombre as tipo_persona, c.nombre as cargo_trabajador
-		FROM  usuario as u
-		inner join persona as p on u.idpersona = p.idpersona
-		INNER JOIN tipo_persona as t ON t.idtipo_persona = p.idtipo_persona
-		INNER JOIN cargo_trabajador as c ON c.idcargo_trabajador = p.idcargo_trabajador
-		INNER JOIN sunat_c06_doc_identidad as sdi ON sdi.code_sunat = p.tipo_documento
-		WHERE u.estado_delete = '1' ORDER BY  u.estado DESC, p.nombre_razonsocial ASC ";
+		$sql = "SELECT p.idpersona, u.idusuario, p.nombres, p.apellidos, p.tipo_documento, p.numero_documento, p.celular, p.correo, p.foto_perfil, u.login, DATE_FORMAT(u.last_sesion, '%d/%m/%Y %h:%i %p') AS last_sesion, u.estado, p.tipo_persona, cp.nombre AS cargo
+		FROM usuario AS u
+		INNER JOIN persona AS p ON u.idpersona = p.idpersona
+		INNER JOIN personal_del_pi AS pp ON p.idpersona = pp.idpersona
+		INNER JOIN cargo_personal AS cp ON cp.idcargo_personal = pp.idcargo_personal
+		WHERE u.estado_delete = '1' ORDER BY  u.estado DESC, p.nombres ASC";
 		return ejecutarConsulta($sql);
 	}
 	//Implementar un método para listar los registros y mostrar en el select
@@ -181,15 +179,14 @@ class Usuario
 	//Funcion para verificar el acceso al sistema
 	public function verificar($login, $clave)	{
 
-		$sql = "SELECT u.idusuario, p.idpersona, pp.idpersonal_pi, cp.idcargo_personal, e.idempresa,
+		$sql = "SELECT 
+		u.idusuario, p.idpersona, e.idempresa,
 		e.razon_social, s.nombre_sucursal, f.nombre_facultad, c.nombre_carrera,
-		p.nombres, p.apellidos, p.tipo_persona, cp.nombre AS cargo,
-		p.tipo_documento, p.numero_documento, p.celular, p.correo,
-		u.login, p.foto_perfil
+		p.nombres, p.apellidos, p.tipo_persona,
+		p.tipo_documento, p.numero_documento,
+		p.foto_perfil, u.login
 		FROM usuario AS u
 		INNER JOIN persona AS p ON u.idpersona = p.idpersona
-		INNER JOIN personal_del_pi AS pp ON u.idpersona = p.idpersona
-		INNER JOIN cargo_personal AS cp ON pp.idcargo_personal = cp.idcargo_personal
 		INNER JOIN detalle_usuario_empresa AS due ON u.idusuario = due.idusuario
 		INNER JOIN empresa AS e ON due.idempresa = e.idempresa
 		INNER JOIN sucursal AS s ON due.idsucursal = s.idsucursal
