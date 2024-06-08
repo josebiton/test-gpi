@@ -27,19 +27,43 @@
       <ul class="main-menu">
 
 
-        <!-- Start::slide__category ================================================================== -->
+        <!-- Start::================== INICIO  ================== -->
         <li class="slide__category"><span class="category-name">I N I C I O</span></li>
-        <!-- End::slide__category -->
 
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['Dashboard'] == '1') { ?>
+        <!-- Escritorio Estudiante -->
+        <?php  if ($_SESSION['escritorioE'] == '1') { ?>
         <li class="slide">
           <a href="escritorio.php" class="side-menu__item">
-            <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label"> Dashboards</span>
+            <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label">Escritorio</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
+        <!-- End::E.Estudiante -->
+
+        
+
+        <!-- Start::================== PROYECTO  ================== -->
+        <li class="slide__category"><span class="category-name">P R O Y E C T O</span></li>
+        
+        <!-- Perfil de Proyecto -->
+        <?php  if ($_SESSION['perfil'] == '1') { ?>
+        <li class="slide">
+          <a href="perfil_proyecto.php" class="side-menu__item">
+            <i class="bx bx-atom side-menu__icon"></i><span class="side-menu__label">Perfil</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::P.Proyecto -->
+
+        <!-- Cronograma -->
+        <?php  if ($_SESSION['cronograma'] == '1') { ?>
+        <li class="slide">
+          <a href="cronograma_p.php" class="side-menu__item">
+            <i class="bx bx-calendar side-menu__icon"></i><span class="side-menu__label">Cronograma</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::P.Proyecto -->
 
         
       </ul>

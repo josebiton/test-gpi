@@ -403,47 +403,64 @@
         <div class="main-header-dropdown header-shortcuts-dropdown dropdown-menu pb-0 dropdown-menu-end" aria-labelledby="notificationDropdown">
           <div class="p-3">
             <div class="d-flex align-items-center justify-content-between">
-              <p class="mb-0 fs-17 fw-semibold">---</p>
+              <p class="mb-0 fs-17 fw-semibold">Plataformas UPeU</p>
             </div>
           </div>
           <div class="dropdown-divider mb-0"></div>
           <div class="main-header-shortcuts p-2" id="header-shortcut-scroll">
             <div class="row g-2">
               <div class="col-4">
-                <a href="" target="_blank">
+                <a href="https://upeu.icrmedu.com" target="_blank">
                   <div class="text-center p-3 related-app">
                     <span class="avatar avatar-sm avatar-rounded">
-                      <img src="../assets/images/dfs/logo-facebook.jpg" alt="" />
+                      <img src="../assets/images/dfs/b-learning.ico" alt="" />
                     </span>
-                    <span class="d-block fs-12">Facebook</span>
+                    <span class="d-block fs-12">B-Learning</span>
                   </div>
                 </a>
               </div>
               <div class="col-4">
-                <a href="" target="_blank">
+                <a href="https://lamb-academic.upeu.edu.pe" target="_blank">
                   <div class="text-center p-3 related-app">
                     <span class="avatar avatar-sm avatar-rounded">
-                      <img src="../assets/images/dfs/logo-instagram.jpg" alt="" />
+                      <img src="../assets/images/dfs/portal.png" alt="" />
                     </span>
-                    <span class="d-block fs-12">Instagram</span>
+                    <span class="d-block fs-12">Protal Académico</span>
                   </div>
                 </a>
               </div>
               <div class="col-4">
-                <a href="" target="_blank">
+                <a href="https://lamb-learning.upeu.edu.pe" target="_blank">
                   <div class="text-center p-3 related-app">
                     <span class="avatar avatar-sm avatar-rounded">
-                      <img src="../assets/images/dfs/logo-tiktok.jpg" alt="" />
+                      <img src="../assets/images/dfs/lamb-learning.svg" alt="" />
                     </span>
-                    <span class="d-block fs-12">TikTok</span>
+                    <span class="d-block fs-12">Lamb Learning</span>
                   </div>
                 </a>
               </div>
             </div>
           </div>
           <div class="p-3 border-top">
-            <div class="d-grid">
-              <a href="https://api.whatsapp.com/send?phone=+51961837587&text=Hola buenos dias, nesecito soporte sobre:" target="_blank" class="btn btn-success">WhatsApp</a>
+            <div class="row g-2">
+
+              <div class="col-4">
+                <a href="">
+                  <div class="text-center p-3 related-app">
+                    <span class="d-block fs-12">Sistemas</span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-4">
+                <select class="form-select" id="mainHeaderProfile1" aria-label="Periodo">
+                  <?php echo $_SESSION['filtro_user_L1']; ?>
+                </select>
+              </div>
+
+              <div class="col-4">
+              <select class="form-select" id="mainHeaderProfile2" aria-label="Equipo">
+                  <?php echo $_SESSION['filtro_user_L2']; ?>
+                </select>
             </div>
           </div>
         </div>

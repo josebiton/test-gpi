@@ -1,111 +1,125 @@
-
+var idusuario;
+var idcarrera;
+var idsemestre;
+var idequipo;
 
 function init(){
-
-  mostrar_tecnico_redes();
-  mostrar_planes();
-
-}
-
-//  :::::::::::::::: T R A B A J A D O R -- T E C N I C O   R E D E S   :::::::::::::::: 
-
-function mostrar_tecnico_redes() {
   
-  $.post("ajax/home.php?op=mostrar_tecnico_redes",  function(e, status){
-    e = JSON.parse(e); console.log(e);
-    if (e.status == true){
+  mostrar_perfil(idequipo);
+  console.log(idusuario, idcarrera, idsemestre, idequipo);
+  filtro_ua(idusuario);
 
-      $('#tecnico_redes').html(''); //limpiar el div
-
-      e.data.forEach((val, key)=> {
-
-        var codigoHTML = `<div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-          <div class="card custom-card text-center team-card ">
-            <div class="card-body p-5">
-              <span class="avatar avatar-xxl avatar-rounded mb-3 team-avatar">
-                <img src="assets/modulo/persona/perfil/${val.foto_perfil}" alt="">
-              </span>
-              <p class="fw-semibold fs-15 mb-0 text-default">${val.nombre} ${val.apellidos}</p>
-              <span class="text-muted fs-12 text-primary fw-semibold">${val.cargo}</span>
-              <p class="text-muted mt-2 fs-13"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <div class="mt-2">
-                <a href="https://wa.me/+51${val.celular}?text=Deseo%20cotizar%20los%20planes%20de%20internet" class="btn btn-light text-success" target="_blank"><i class="bi bi-whatsapp"></i> Contacto</a>
-              </div>
-            </div>
-          </div>
-        </div>`;
-
-        $('#tecnico_redes').append(codigoHTML);
-
-      });
-      
-    }else {
-      ver_errores(response);
-    }
-  }).fail(function (e) { ver_errores(e); });
 }
 
 
-//  :::::::::::::::: P L A N E S   :::::::::::::::: 
-function mostrar_planes() {
+function mostrar_perfil(idequipo){
+
+  $.post("../ajax/perfil_proyecto.php?op=mostrar_perfil_p", {idequipo: idequipo}, function (e, status) {
+		e = JSON.parse(e);
+    if (e.status == true) {
+      $('#titulo').val(e.data.titulo_proyecto);
+      
+    } else {
+      ver_errores(e)
+    }
+	}).fail( function(e) { ver_errores(e); } );
+
+}
+
+
+
+// :::::::::::::::::::::::::::::: F I L T R O S ::::::::::::::::::::::::::::::::::::::
+function filtro_ua(idusuario){
+
+  $.post("../ajax/home.php?op=filtro_ua", {idusuario: idusuario}, function (e, status) {
+		e = JSON.parse(e);
+    if (e.status == true) {
+      $("#filtro_a").empty();
+      e.data.forEach(function(carrera) {
+        $("#filtro_a").append('<option value="' + carrera.idcarrera + '">' + carrera.abreviatura + '</option>');
+      });
+      if (idcarrera) { $("#filtro_a").val(idcarrera); }
+      
+    } else {
+      ver_errores(e)
+    }
+	}).fail( function(e) { ver_errores(e); } );
+
+  filtro_ub();
+}
+
+function filtro_ub(){
+
+  var selt_idcarrera = $("#filtro_a").val();
+  var $car = selt_idcarrera && selt_idcarrera !== "" ? selt_idcarrera : idcarrera;
   
-  $.post("ajax/home.php?op=mostrar_planes",  function(e, status){
-    e = JSON.parse(e); console.log(e);
-    if (e.status == true){
-
-      $('#planes').html(''); //limpiar el div
-
-      e.data.forEach((val, key)=> {
-
-        var codigoHTML = `<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 border border-2 rounded-4">
-        <div class="p-4">
-          <h6 class="fw-semibold text-center">${val.plan}</h6>
-          <div class="py-3 d-flex align-items-center justify-content-center">
-            <i class="ri-router-line la-4x text-primary"></i>
-            <div class="text-end ms-5">
-              <p class="fs-25 fw-semibold mb-0">S/ ${val.costo}</p>
-              <p class="text-muted fs-11 fw-semibold mb-0">por mes</p>
-            </div>
-          </div>
-          <ul class="list-unstyled text-center fs-12 px-3 pt-3 mb-0">
-            <li class="mb-3">
-              <span class="text-muted">Velocidad Minima<span class="badge bg-light text-default ms-1">100 mbps</span></span>
-            </li>
-            <li class="mb-3">
-              <span class="text-muted">Instalación<span class="badge bg-light text-default ms-1">Gratis</span></span>
-            </li>
-            <li class="mb-3">
-              <span class="text-muted">Soporte en línea</span>
-            </li>
-            <li class="mb-3">
-              <span class="text-muted">Soporte Técnico<span class="badge bg-light text-default ms-1"><i class="ri-check-line"></i></span></span>
-            </li>
-            <li class="mb-3">
-              <span class="text-muted">Fecha de pago<span class="badge bg-light text-default ms-1">03 de capa mes</span></span>
-            </li>
-            <li class="mb-4">
-              <span class="text-muted">Contrato por 8 meses</span>
-            </li>
-          </ul>
-          <div class="d-grid">
-            <button class="btn btn-primary-light btn-wave">Empezar</button>
-          </div>
-        </div>
-      </div>`;
-
-        $('#planes').append(codigoHTML);
-
+  $.post("../ajax/home.php?op=filtro_ub", {idcarrera: $car}, function (e, status) {
+		e = JSON.parse(e);
+    if (e.status == true) {
+      //listar los datos de una carrera VALUE = e.data.idcarrera  TEXT = e.data.nombre_carrera
+      $("#filtro_b").empty();
+      e.data.forEach(function(f2) {
+        $("#filtro_b").append('<option value="' + f2.idsemestre + '">' + f2.periodo + '</option>');
       });
-      
-    }else {
-      ver_errores(response);
+      if (idsemestre) { $("#filtro_b").val(idsemestre); }
+    } else {
+      ver_errores(e)
     }
-  }).fail(function (e) { ver_errores(e); });
+	}).fail( function(e) { ver_errores(e); } );
+
+  filtro_uc();
 }
+
+function filtro_uc(){
+
+  var selt_idsemestre = $("#filtro_b").val();
+  var $id = selt_idsemestre && selt_idsemestre !== "" ? selt_idsemestre : idsemestre;
+
+  $.post("../ajax/home.php?op=filtro_uc", {idsemestre: $id}, function (e, status) {
+		e = JSON.parse(e);
+    if (e.status == true) {
+      //listar los datos de una carrera VALUE = e.data.idcarrera  TEXT = e.data.nombre_carrera
+      $("#filtro_c").empty();
+      e.data.forEach(function(f2) {
+        $("#filtro_c").append('<option value="' + f2.idequipo + '">' + f2.nombre_equipo + '</option>');
+      });
+      if (idequipo) { $("#filtro_c").val(idequipo); }
+    } else {
+      ver_errores(e)
+    }
+	}).fail( function(e) { ver_errores(e); } );
+
+}
+
+
+
+function traer_data_filtro(){
+  var storedData = localStorage.getItem('nube_id_usuario');
+  if (storedData) {
+    var parsedData = JSON.parse(storedData);
+    
+    idusuario = parsedData.idusuario;
+    idcarrera = parsedData.idcarrera;
+    idsemestre = parsedData.idsemestre;
+    idequipo = parsedData.idequipo;
+
+  // Ahora puedes usar estas variables como necesites
+  console.log(idusuario, idcarrera, idsemestre, idequipo);
+  } else {
+    // Manejar el caso donde no hay datos en localStorage
+    console.log('No se encontraron datos en localStorage');
+  }
+}
+
+traer_data_filtro();
+
+
+
+
+
+
+
 
 $(document).ready(function () {
   init();
 });
-
-
-// .....::::::::::::::::::::::::::::::::::::: F U N C I O N E S    A L T E R N A S  :::::::::::::::::::::::::::::::::::::::..

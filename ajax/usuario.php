@@ -19,60 +19,21 @@ $clave      = isset($_POST["clave"]) ? limpiarCadena($_POST["clave"]) : "";
 $permiso    = isset($_POST["permiso"]) ? $_POST['permiso'] : "";
 
 switch ($_GET["op"]) {
-  
-
-  case 'permisos_docente':
-    //Obtenemos todos los permisos de la tabla permisos
-    require_once "../modelos/Permiso.php";
-    $permiso = new Permiso();
-    $rspta = $permiso->listar_permisos_docente();
-
-    $id = $_GET['id'];
-    $marcados = $usuario->listarmarcados($id); # Obtener los permisos asignados al usuario
-
-    $valores = array(); # Declaramos el array para almacenar todos los permisos marcados
-
-    foreach ($marcados['data'] as $key => $val) { array_push($valores, $val['idpermiso']); } # Almacenar los permisos asignados al usuario en el array
-
-    //Mostramos la lista de permisos en la vista y si están o no marcados
-    echo '<div class="row gy-2" >';
-    foreach ($rspta['data']['agrupado'] as $key => $val1) {   
-      echo '<div class="col-lg-4 col-xl-3 col-xxl-3 mt-3" >';
-      echo '<span ><b>'.$val1['modulo'].'</b></span>';
-      foreach ($val1['submodulo'] as $key => $val2) {
-        $sw = in_array($val2['idpermiso'], $valores) ? 'checked' : '';
-        echo '<div class="custom-toggle-switch d-flex align-items-center mt-2 mb-2">
-          <input id="permiso_' . $val2['idpermiso'] . '" name="permiso_d[]" type="checkbox" ' . $sw . ' value="' . $val2['idpermiso'] . '" checked>
-          <label for="permiso_' . $val2['idpermiso'] . '" class="label-primary"></label><span class="ms-3">' . $val2['submodulo'] . '</span>
-        </div>';
-      }  
-      echo '</div>';
-    }
-    echo '</div>';
-  break;
 
   case 'validar_usuario':
     $rspta = $usuario->validar_usuario($_GET["idusuario"],$_GET["login"]);
     //Codificar el resultado utilizando json
     echo json_encode($rspta, true);
   break;
-  
-
-  // MAS PERMISOS ==========================================================================
 
   case 'verificar':
 
     $logina   = $_POST['logina'];
     $clavea   = $_POST['clavea'];
     $st       = $_POST['st'];
-
-    //Hash SHA256 en la contraseña
-    //$clavehash=$clavea;
     $clavehash = hash("SHA256", $clavea);
 
-    $rspta  = $usuario->verificar($logina, $clavehash);    
-    // $rspta2 = $usuario->onoffTempo($st);
-    // $rspta3 = $usuario->consultatemporizador();    
+    $rspta  = $usuario->verificar($logina, $clavehash);
 
     if (!empty($rspta['data']['usuario'])) {
 
@@ -82,23 +43,16 @@ switch ($_GET["op"]) {
       //Declaramos las variables de sesión
       $_SESSION['idusuario']      = $rspta['data']['usuario']['idusuario'];
       $_SESSION['idpersona']      = $rspta['data']['usuario']['idpersona'];
-      $_SESSION['tipo_persona']   = $rspta['data']['usuario']['tipo_persona'];
       $_SESSION['user_nombre']    = $rspta['data']['usuario']['nombres'];
       $_SESSION['user_apellido']  = $rspta['data']['usuario']['apellidos'];
-      $_SESSION['user_tipo_doc']  = $rspta['data']['usuario']['tipo_documento'];
+      $_SESSION['tipo_persona']   = $rspta['data']['usuario']['tipo_persona'];
       $_SESSION['user_num_doc']   = $rspta['data']['usuario']['numero_documento'];
       $_SESSION['user_imagen']    = $rspta['data']['usuario']['foto_perfil'];
-      $_SESSION['user_login']     = $rspta['data']['usuario']['login'];
+      //Filtros
+      $_SESSION['filtro_user_a']  = $rspta['data']['filtro_user']['filtro_a'];
+      $_SESSION['filtro_user_b']  = $rspta['data']['filtro_user']['filtro_b'];
+      $_SESSION['filtro_user_c']  = $rspta['data']['filtro_user']['filtro_c'];
 
-      //Declaramos las variables de empresa
-      $_SESSION['idempresa']      = $rspta['data']['usuario']['idempresa'];
-      $_SESSION['razon_social']   = $rspta['data']['usuario']['razon_social'];
-      $_SESSION['sucursal']       = $rspta['data']['usuario']['nombre_sucursal'];
-      $_SESSION['facultad']       = $rspta['data']['usuario']['nombre_facultad'];
-      $_SESSION['carrera']        = $rspta['data']['usuario']['nombre_carrera'];
-
-      
-      
       $marcados = $usuario->listarmarcados($rspta['data']['usuario']['idusuario']);         # Obtenemos los permisos del usuario
 
       $valores = array();           # Declaramos el array para almacenar todos los permisos marcados
@@ -106,12 +60,11 @@ switch ($_GET["op"]) {
       foreach ($marcados['data'] as $key => $val) { array_push($valores, $val['idpermiso']);  } # Almacenamos los permisos marcados en el array      
       
                
-      in_array(1, $valores) ? $_SESSION['Dashboard PI']       = 1 : $_SESSION['Dashboard PI']       = 0;
-      in_array(2, $valores) ? $_SESSION['Mi Perfil']          = 1 : $_SESSION['Mi Perfil']          = 0;
-      in_array(3, $valores) ? $_SESSION['Docentes']           = 1 : $_SESSION['Docentes']           = 0;
-      in_array(4, $valores) ? $_SESSION['Cursos']             = 1 : $_SESSION['Cursos']             = 0;
+      in_array(1, $valores) ? $_SESSION['escritorioE']  = 1 : $_SESSION['escritorioE']      = 0;
+      in_array(2, $valores) ? $_SESSION['perfil']       = 1 : $_SESSION['perfil']           = 0;
+      in_array(3, $valores) ? $_SESSION['cronograma']   = 1 : $_SESSION['cronograma']       = 0;
 
-      
+
 
       $data = [ 'status'=>true, 'message'=>'todo okey','data'=> $rspta['data']  ];
       echo json_encode($data, true);
