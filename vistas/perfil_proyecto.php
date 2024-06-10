@@ -39,7 +39,7 @@
                   <div>
                     <div class="d-md-flex d-block align-items-center ">
                       <button class="btn-modal-effect btn btn-primary label-btn btn-agregar m-r-10px" onclick="show_hide_form(2);  limpiar_form_perfil(); mostrar_perfil_p_edit();"  > <i class="ri-edit-line label-btn-icon me-2"></i>Editar </button>
-                      <button type="button" class="btn btn-danger btn-cancelar m-r-10px" onclick="show_hide_form(1);" style="display: none;"><i class="ri-arrow-left-line"></i></button>
+                      <button type="button" class="btn btn-danger btn-cancelar m-r-10px" onclick="mostrar_perfil_p(); show_hide_form(1);" style="display: none;"><i class="ri-arrow-left-line"></i></button>
                       <button class="btn-modal-effect btn btn-success label-btn btn-guardar m-r-10px" style="display: none;"> <i class="ri-save-2-line label-btn-icon me-2" ></i> Guardar </button>
                       <div>
                         <p class="fw-semibold fs-18 mb-0">Perfil del Proyecto Integrador</p>
@@ -63,9 +63,19 @@
                 <div class="row">
                   <div class="col-xxl-12 col-xl-12">
                     
-                    <div class="card custom-card ">                  
+                    <div class="card custom-card"> 
+                                      
                       <div class="card-body">
-                        <!-- TABLA -->
+                        <!-- SIN DATOS -->
+                         <div class="row" id="div-banner" style="display: none;">
+                          <div class="alert alert-warning text-center" role="alert">
+                            <h4 class="text-warning">
+                              Empiesa a Redactar tu Proyecto
+                              <button class="btn btn-icon btn-warning-transparent btn-wave" onclick="show_hide_form(2);  limpiar_form_perfil(); mostrar_perfil_p_edit();"  > <i class="ri-edit-line"></i></button>
+                            </h4>
+                          </div>
+                         </div>
+                        <!-- PORTADA -->
                         <div class="row" id="div-perfil">
 
                           <div class="col-xl-12 d-block p-2 bg-secondary-transparent mb-2 rounded fs-4 text-center">

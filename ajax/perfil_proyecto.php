@@ -94,7 +94,7 @@ if (!isset($_SESSION["user_nombre"])) {
       break;
 
       case 'editar_perfil':
-        $rspta = $Perfil_proyecto->editar_perfil($_GET["idusuario"], $titulo_p, $descripcion_p, $fecha_i, $fecha_e, $link_p);
+        $rspta = $Perfil_proyecto->editar_perfil($_GET["idequipo"], $titulo_p, $descripcion_p, $fecha_i, $fecha_e, $link_p);
         echo json_encode($rspta);
       break;
 

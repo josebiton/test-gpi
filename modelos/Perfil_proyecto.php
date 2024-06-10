@@ -33,31 +33,37 @@ class Perfil_proyecto{
     $sql = "SELECT * FROM hitos WHERE idhitos = '$idhitos'";
     return ejecutarConsultaSimpleFila($sql);
   }
-  public function editar_perfil($id, $titulo_p, $descripcion_p, $fecha_i, $fecha_e, $link_p){
+  public function editar_perfil($ideq, $titulo_p, $descripcion_p, $fecha_i, $fecha_e, $link_p){
     $sql_0 = "SELECT pp.idperfil_del_pi, epi.idequipos_pi
-    FROM usuario AS u
-    INNER JOIN persona AS p ON u.idpersona = p.idpersona
-    INNER JOIN estudiante AS e ON p.idpersona = e.idpersona
-    INNER JOIN equipos_pi AS epi ON e.idequipo = epi.idequipos_pi
-    INNER JOIN perfil_del_pi AS pp ON epi.idequipos_pi = pp.idnum_equipo
-    WHERE u.idusuario = '$id' AND pp.estado = '1' AND pp.estado_delete = '1';";
+              FROM equipos_pi AS epi
+              INNER JOIN perfil_del_pi AS pp ON epi.idequipos_pi = pp.idnum_equipo
+              WHERE epi.idequipos_pi = '$ideq' AND epi.estado = '1' AND epi.estado_delete = '1';";
     $result = ejecutarConsultaSimpleFila($sql_0);
   
     $idperfil = ''; $idequipo = '';
     if ($result['status']) {
-      if (isset($result['data']['idperfil_del_pi'])) {
+
+      if (!empty($result['data']['idperfil_del_pi'])) {
         $idperfil = $result['data']['idperfil_del_pi'];
+      } else {
+        $idperfil = null;
       }
-      if (isset($result['data']['idequipos_pi'])) {
+
+      if (!empty($result['data']['idequipos_pi'])) {
         $idequipo = $result['data']['idequipos_pi'];
+      } else {
+        $idequipo = null;
       }
+
     } else {
       echo 'Error en la consulta: ' . $result['message'];
     }
 
     $sql_1 = "UPDATE perfil_del_pi SET idnum_equipo = '$idequipo', titulo_proyecto = '$titulo_p', descripcion_proyecto = '$descripcion_p', fecha_inicio = '$fecha_i', fecha_cierre = '$fecha_e', link_prototipo = '$link_p'
     WHERE idperfil_del_pi = '$idperfil';";
-    return ejecutarConsulta($sql_1);
+    $edit_perfil = ejecutarConsulta($sql_1);  if ($edit_perfil['status'] == false) {  return $edit_perfil; }
+
+    return $edit_perfil;
   }
 
   public function insertar_hito($idequipo, $nombre_hito, $fecha_hito_e, $descr_hito){

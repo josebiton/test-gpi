@@ -8,9 +8,9 @@ var tabla_hitos;
 
 function init(){
 	traer_data_filtro();
+  mostrar_perfil_p();
   $(".btn-guardar").on("click", function (e) { if ( $(this).hasClass('send-data')==false) { $("#submit-form-perfil-pi").submit(); }  });
   $("#guardar_registro_hito").on("click", function (e) { if ( $(this).hasClass('send-data')==false) { $("#submit-form-hito").submit(); }  });
-	mostrar_perfil_p();
   listar_tabla_hitos();
 	listar_hitos();
 }
@@ -42,6 +42,7 @@ function show_hide_form(flag) {
 		$(".btn-cancelar").hide();
 		
 	} else if (flag == 2) {
+		$("#div-banner").hide();
 		$("#div-perfil").hide();
 		$("#div-form").show();
 
@@ -56,29 +57,37 @@ function mostrar_perfil_p(){
 	$.post("../ajax/perfil_proyecto.php?op=mostrar_perfil_p", { idequipo: idequipo }, function (e, status) {
 		e = JSON.parse(e);
     if (e.status == true) {
-			$('#nombre_p').text(e.data.titulo_proyecto);
+      if(e.data == null){
+        $("#div-banner").show();
+        $("#div-perfil").hide();
+
+      } else {
+        $('#nombre_p').text(e.data.titulo_proyecto);
       
-      // Formatear las fechas
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        // Formatear las fechas
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-      // Crear fechas en la zona horaria local
-      const fechaInicioParts = e.data.fecha_inicio.split('-');
-      const fechaInicio = new Date(fechaInicioParts[0], fechaInicioParts[1] - 1, fechaInicioParts[2]);
-      const fechaCierreParts = e.data.fecha_cierre.split('-');
-      const fechaCierre = new Date(fechaCierreParts[0], fechaCierreParts[1] - 1, fechaCierreParts[2]);
+        // Crear fechas en la zona horaria local
+        const fechaInicioParts = e.data.fecha_inicio.split('-');
+        const fechaInicio = new Date(fechaInicioParts[0], fechaInicioParts[1] - 1, fechaInicioParts[2]);
+        const fechaCierreParts = e.data.fecha_cierre.split('-');
+        const fechaCierre = new Date(fechaCierreParts[0], fechaCierreParts[1] - 1, fechaCierreParts[2]);
 
-      // Convertir a cadena con formato
-      const fechaInicioFormateada = fechaInicio.toLocaleDateString('es-ES', options);
-      const fechaCierreFormateada = fechaCierre.toLocaleDateString('es-ES', options);
+        // Convertir a cadena con formato
+        const fechaInicioFormateada = fechaInicio.toLocaleDateString('es-ES', options);
+        const fechaCierreFormateada = fechaCierre.toLocaleDateString('es-ES', options);
 
-      $('#f_ini').text(fechaInicioFormateada);
-      $('#f_cie').text(fechaCierreFormateada);
+        $('#f_ini').text(fechaInicioFormateada);
+        $('#f_cie').text(fechaCierreFormateada);
 
-			$('#descp_p').html(e.data.descripcion_proyecto);
-			$('#link_prototipo').attr('href', e.data.link_prototipo);
+        $('#descp_p').html(e.data.descripcion_proyecto);
+        $('#link_prototipo').attr('href', e.data.link_prototipo);
+      }
+			
 			
       
     } else {
+      
       ver_errores(e)
     }
 	}).fail( function(e) { ver_errores(e); } );
@@ -182,7 +191,7 @@ function editar_perfil(e) {
 	var formData = new FormData($("#form-perfil-pi")[0]);
 
 	$.ajax({
-		url: "../ajax/perfil_proyecto.php?op=editar_perfil&idusuario="+idusuario,
+		url: "../ajax/perfil_proyecto.php?op=editar_perfil&idequipo="+idequipo,
 		type: "POST",
 		data: formData,
 		contentType: false,
