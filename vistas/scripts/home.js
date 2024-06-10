@@ -5,14 +5,14 @@ var idequipo;
 
 function init(){
   
-  mostrar_perfil(idequipo);
+  mostrar_perfil();
   console.log(idusuario, idcarrera, idsemestre, idequipo);
-  filtro_ua(idusuario);
+  filtro_ua();
 
 }
 
 
-function mostrar_perfil(idequipo){
+function mostrar_perfil(){
 
   $.post("../ajax/perfil_proyecto.php?op=mostrar_perfil_p", {idequipo: idequipo}, function (e, status) {
 		e = JSON.parse(e);
@@ -29,7 +29,7 @@ function mostrar_perfil(idequipo){
 
 
 // :::::::::::::::::::::::::::::: F I L T R O S ::::::::::::::::::::::::::::::::::::::
-function filtro_ua(idusuario){
+function filtro_ua(){
 
   $.post("../ajax/home.php?op=filtro_ua", {idusuario: idusuario}, function (e, status) {
 		e = JSON.parse(e);

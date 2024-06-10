@@ -13,11 +13,13 @@
         <head>
           
           <?php $title_page = "Perfil PI"; include("template/head.php"); ?>
+          <!-- Quill Editor CSS -->
+          <link rel="stylesheet" href="../assets/libs/quill/quill.snow.css">
+          <link rel="stylesheet" href="../assets/libs/quill/quill.bubble.css">
           
         </head> 
 
-        <body id="body-usuario" idusuario="<?php echo $_SESSION['idusuario']; ?>"  > 
-        <input type="hidden" id="user_e" name="user_e" value="<?php echo $_SESSION['idusuario']; ?>">
+        <body id="body-usuario" idusuario="<?php echo $_SESSION['idusuario']; ?>"  >
 
           <?php include("template/switcher.php"); ?>
           <?php include("template/loader.php"); ?>
@@ -36,7 +38,7 @@
                 <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
                   <div>
                     <div class="d-md-flex d-block align-items-center ">
-                      <button class="btn-modal-effect btn btn-primary label-btn btn-agregar m-r-10px" onclick="show_hide_form(2);  limpiar_form_perfil(); "  > <i class="ri-edit-line label-btn-icon me-2"></i>Editar </button>
+                      <button class="btn-modal-effect btn btn-primary label-btn btn-agregar m-r-10px" onclick="show_hide_form(2);  limpiar_form_perfil(); mostrar_perfil_p_edit();"  > <i class="ri-edit-line label-btn-icon me-2"></i>Editar </button>
                       <button type="button" class="btn btn-danger btn-cancelar m-r-10px" onclick="show_hide_form(1);" style="display: none;"><i class="ri-arrow-left-line"></i></button>
                       <button class="btn-modal-effect btn btn-success label-btn btn-guardar m-r-10px" style="display: none;"> <i class="ri-save-2-line label-btn-icon me-2" ></i> Guardar </button>
                       <div>
@@ -63,35 +65,76 @@
                     
                     <div class="card custom-card ">                  
                       <div class="card-body">
-                        
+                        <!-- TABLA -->
                         <div class="row" id="div-perfil">
-                          <!-- LISTO PARA EL DISEÑO MAS PERROM DE LA HISTORIA DE PI -->
-                          <span id="nombre_p" class="d-block p-2 bg-secondary-transparent mb-1 rounded">d-block</span>
+
+                          <div class="col-xl-12 d-block p-2 bg-secondary-transparent mb-2 rounded fs-4 text-center">
+                            <b><span id="nombre_p"></span></b>
+                          </div>
+                          <div class="col-xl-3 d-block p-2 bg-primary-transparent mx-2 mb-2 fs-6 rounded">
+                            <span><b>Inicio</b>: <p id="f_ini"></p></span>
+                            <span><b>Entrega</b>: <p id="f_cie"></p></span>
+                          </div>
+                          <div class="col-xl-8 d-block bg-primary-transparent rounded mb-2" style="width: 73%;">
+                            <div name="descp_p" id="descp_p" class=" mx-3 my-3"></div>
+                          </div>
+                          <div class="col-12 p-1"></div>
+                          <div class="col-xl-3 d-block p-2 mx-2 bg-secondary-transparent rounded mb-2 text-center">
+                            <a id="link_prototipo" target="_blank" href="">
+                              <img src="../assets/images/default/f2.png" alt="" style="width: 70%;">
+                            </a>
+                          </div>
+
+                          <div class="col-xl-8 p-2 bg-light rounded" style="width: 73%;">
+                                <span class="text-dark fs-6 my-2 mx-3"><b>Hitos del Proyecto</b></span>
+                            <div class="card custom-card">
+                              <div class="card-body table-responsive">
+                                <table id="tabla-hitos-1" class="table text-nowrap w-100" style="width: 100%;">
+                                  <thead>
+                                    <tr>
+                                      <th class="text-center">#</th>
+                                      <th class="text-center">Hito</th>
+                                      <th>Descripción</th>
+                                      <th>Fecha Entrega</th>
+                                      <th class="text-center">Estado</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody></tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+
+
                         </div>
 
+                        <!-- FORMULARIO -->
                         <div class="row" id="div-form" style="display: none;">
                           <form name="form-perfil-pi" id="form-perfil-pi" method="POST" class="needs-validation" novalidate>
 
                             <div class="row gy-4" id="cargando-1-fomulario">
 
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                <label for="titulo_p" class="form-label">Titulo del Proyecto</label>
-                                <input type="text" class="form-control rounded-pill" id="titulo_p" name="titulo_p">
+                              <div class="col-md-8">
+                                <div class="form-label">
+                                  <label for="titulo_p" class="form-label">Titulo del Proyecto(*)</label>
+                                  <input class="form-control" name="titulo_p" id="titulo_p" />
+                                </div>
                               </div>
-
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                <label for="descripcion_p" class="form-label">Descripción</label>
-                                <textarea class="form-control" id="descripcion_p" name="descripcion_p" rows="3"></textarea>
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label for="fecha_i" class="form-label">Fecha Inicio(*)</label>
+                                  <input type="date" class="form-control" name="fecha_i" id="fecha_i" />
+                                </div>
                               </div>
-
-                              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <label for="fecha_i" class="form-label">Fecha de Inicio</label>
-                                <input type="date" class="form-control" id="fecha_i" name="fecha_i">
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label for="fecha_e" class="form-label">Fecha Entrega(*)</label>
+                                  <input type="date" class="form-control" name="fecha_e" id="fecha_e" />
+                                </div>
                               </div>
-
-                              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <label for="fecha_e" class="form-label">Fecha de Entrega</label>
-                                <input type="date" class="form-control" id="fecha_e" name="fecha_e">
+                              <div class="col col-xl-12 col-md-12 h-50 ">
+                                <div id="editor"> </div>
+                                <textarea name="descripcion_p" id="descripcion_p" class="hidden"></textarea>
                               </div>
 
                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -102,30 +145,6 @@
                             </div>
                             
                             <br><br>
-
-                            <div class="row gy-2" id="cargando-2-fomulario">
-
-
-                              <label for="hitos">
-                                <b class="m-3">Lista de Hitos</b>
-                                <button class="btn btn-primary-light btn-sm">Agregar</button>
-                              </label>
-                              <div class="table-responsive">
-                                <table class="table text-nowrap table-bordered" id="tbl-hitos">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col" class="text-center">#</th>
-                                      <th scope="col" class="text-center">Acciones</th>
-                                      <th scope="col">Hito</th>
-                                      <th scope="col">Descripción</th>
-                                      <th scope="col">Fecha de Entrega</th>
-                                      <th scope="col" class="text-center">estado</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody></tbody>
-                                </table>
-                              </div>
-                            </div>
 
                             <!-- cargando... -->
                             <div class="row" id="cargando-3-fomulario" style="display: none;">
@@ -145,6 +164,28 @@
                             <button type="submit" style="display: none;" id="submit-form-perfil-pi">Submit</button>
 
                           </form>
+                          <div class="row gy-2" id="cargando-2-fomulario">
+
+                            <div class="col-xl-12">
+                              <label for="hitos">
+                                <b class="m-3">Lista de Hitos</b>
+                                <button class=" btn-modal-effect btn btn-primary-light btn-sm" onclick="limpiar_hito();" data-bs-effect="effect-super-scaled" data-bs-toggle="modal" data-bs-target="#modal-agregar-hito">Agregar</button>
+                              </label>
+                              <table id="tbl-hitos" class="table table-bordered w-100" style="width: 100%;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col" class="text-center">Acciones</th>
+                                    <th scope="col">Hito</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Fecha de Entrega</th>
+                                    <th scope="col" class="text-center">estado</th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
                         </div>
                           
                                             
@@ -157,6 +198,58 @@
                   </div> <!-- /.col -->           
                 </div>
                 <!-- End::row-1 -->
+
+
+                <!-- MODAL:: REGISTRAR HITO - charge 1 -->
+                <div class="modal fade modal-effect" id="modal-agregar-hito" role="dialog" tabindex="-1" aria-labelledby="modal-agregar-pagoLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-dialog-scrollabel">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h6 class="modal-title" id="modal-agregar-hitoLabel1">Hito del Proyecto</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form name="form-agregar-hito" id="form-agregar-hito" method="POST" class="needs-validation" novalidate>
+                          <div class="row" id="cargando-8-fomulario">
+                            <input type="hidden" name="idhitos" id="idhitos">
+                            <input type="hidden" name="idperfil_pi" id="idperfil_pi">
+
+                            <div class="col-md-8">
+                              <div class="form-label">
+                                <label for="nombre_hito" class="form-label">Nombre(*)</label>
+                                <input class="form-control" name="nombre_hito" id="nombre_hito" />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label for="fecha_hito_e" class="form-label">Fecha Entrega(*)</label>
+                                <input type="date" class="form-control" name="fecha_hito_e" id="fecha_hito_e" />
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="descr_hito" class="form-label">Descripción(*)</label>
+                                <textarea name="descr_hito" id="descr_hito" class="form-control" rows="1"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row" id="cargando-9-fomulario" style="display: none;">
+                            <div class="col-lg-12 text-center">
+                              <div class="spinner-border me-4" style="width: 3rem; height: 3rem;" role="status"></div>
+                              <h4 class="bx-flashing">Cargando...</h4>
+                            </div>
+                          </div>
+                          <button type="submit" style="display: none;" id="submit-form-hito">Submit</button>
+                        </form>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal" onclick="limpiar_hito();"><i class="las la-times"></i> Close</button>
+                        <button type="button" class="btn btn-sm btn-primary" id="guardar_registro_hito"><i class="bx bx-save bx-tada"></i> Guardar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End::modal-registrar-plan -->
 
               </div>
             </div>
@@ -173,6 +266,10 @@
           <?php include("template/custom_switcherjs.php"); ?>
 
           <script src="scripts/perfil_proyecto.js"></script>
+          <!-- Quill Editor JS -->
+          <script src="../assets/libs/quill/quill.min.js"></script>
+          <!-- Internal Quill JS -->
+          <script src="../assets/js/quill-editor.js"></script>
 
         </body>
 
