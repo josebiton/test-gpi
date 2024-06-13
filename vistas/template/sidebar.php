@@ -65,6 +65,18 @@
         <?php } ?>
         <!-- End::P.Proyecto -->
 
+        <li class="slide__category"><span class="category-name">G E N E R A L</span></li>
+        <!-- Equipo -->
+        <?php  if ($_SESSION['equipo'] == '1') { ?>
+        <li class="slide">
+          <a href="equipo.php" class="side-menu__item">
+          <i class="bx bx-group side-menu__icon"></i><span class="side-menu__label">Equipo</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::Equipo -->
+
+
         
       </ul>
       <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24"
