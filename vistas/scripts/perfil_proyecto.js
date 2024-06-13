@@ -200,7 +200,7 @@ function editar_perfil(e) {
 			try {
 				e = JSON.parse(e);  //console.log(e); 
         if (e.status == true) {	
-					show_hide_form(1)
+					show_hide_form(1);
 					sw_success('Exito', 'Perfil Actualizado correctamente.');
 					mostrar_perfil_p();
           tabla_hitos1.ajax.reload(null, false);

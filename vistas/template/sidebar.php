@@ -58,7 +58,7 @@
         <!-- Cronograma -->
         <?php  if ($_SESSION['cronograma'] == '1') { ?>
         <li class="slide">
-          <a href="cronograma_p.php" class="side-menu__item">
+          <a href="cronograma.php" class="side-menu__item">
             <i class="bx bx-calendar side-menu__icon"></i><span class="side-menu__label">Cronograma</span>
           </a>
         </li>

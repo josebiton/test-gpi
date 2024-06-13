@@ -104,7 +104,7 @@ class Perfil_proyecto{
 
     if ( empty($existe['data']) ) {
 			$sql="UPDATE hitos SET idperfil_pi='$idperfil_pi', titulo_hito='$nombre_hito', descripcion ='$descr_hito', fecha_entrega='$fecha_hito_e' WHERE idhitos='$idhitos'";
-			$editar =  ejecutarConsulta($sql,);	if ( $editar['status'] == false) {return $editar; } 
+			$editar =  ejecutarConsulta($sql);	if ( $editar['status'] == false) {return $editar; } 
 			
 			return $editar;
 		} else {
