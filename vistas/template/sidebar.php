@@ -66,6 +66,7 @@
         <!-- End::P.Proyecto -->
 
         <li class="slide__category"><span class="category-name">G E N E R A L</span></li>
+
         <!-- Equipo -->
         <?php  if ($_SESSION['equipo'] == '1') { ?>
         <li class="slide">
@@ -75,6 +76,16 @@
         </li>
         <?php } ?>
         <!-- End::Equipo -->
+
+        <!-- Usuario Estudiante -->
+        <?php  if ($_SESSION['usuario estudiante'] == '1') { ?>
+        <li class="slide">
+          <a href="usuario_e.php" class="side-menu__item">
+          <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label">Usuario</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::Usuario-estudiante -->
 
 
         
