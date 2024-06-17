@@ -64,8 +64,11 @@ switch ($_GET["op"]) {
       in_array(2, $valores) ? $_SESSION['perfil']       = 1 : $_SESSION['perfil']           = 0;
       in_array(3, $valores) ? $_SESSION['cronograma']   = 1 : $_SESSION['cronograma']       = 0;
       in_array(4, $valores) ? $_SESSION['equipo']       = 1 : $_SESSION['equipo']           = 0;
-      in_array(5, $valores) ? $_SESSION['usuario']      = 1 : $_SESSION['usuario']          = 0;
+      in_array(5, $valores) ? $_SESSION['usuario']      = 1 : $_SESSION['usuario']           = 0;
       in_array(6, $valores) ? $_SESSION['usuario estudiante'] = 1 : $_SESSION['usuario estudiante'] = 0;
+      in_array(7, $valores) ? $_SESSION['escritorioDOSC']     = 1 : $_SESSION['escritorioDOSC']     = 0;
+      in_array(8, $valores) ? $_SESSION['equipos']      = 1 : $_SESSION['equipos'] = 0;
+      in_array(9, $valores) ? $_SESSION['alunnos']      = 1 : $_SESSION['alunnos'] = 0;
 
 
 

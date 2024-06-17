@@ -31,7 +31,7 @@
         <li class="slide__category"><span class="category-name">I N I C I O</span></li>
 
         <!-- Escritorio Estudiante -->
-        <?php  if ($_SESSION['escritorioE'] == '1') { ?>
+        <?php if ($_SESSION['escritorioE'] == '1') { ?>
         <li class="slide">
           <a href="escritorio.php" class="side-menu__item">
             <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label">Escritorio</span>
@@ -39,6 +39,16 @@
         </li>
         <?php } ?>
         <!-- End::E.Estudiante -->
+
+        <!-- Escritorio Docente -->
+        <?php if ($_SESSION['escritorioDOSC'] == '1') { ?>
+        <li class="slide">
+          <a href="escritorio.php" class="side-menu__item">
+            <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label">Escritorio</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::E.Docente -->
 
         
 
@@ -64,6 +74,26 @@
         </li>
         <?php } ?>
         <!-- End::P.Proyecto -->
+        
+        <!-- Alunnos -->
+        <?php  if ($_SESSION['alunnos'] == '1') { ?>
+        <li class="slide">
+          <a href="alunnos.php" class="side-menu__item">
+            <i class="bx bx-atom side-menu__icon"></i><span class="side-menu__label">Alunnos</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::Alunnos -->
+        
+        <!-- Equipos -->
+        <?php  if ($_SESSION['equipos'] == '1') { ?>
+        <li class="slide">
+          <a href="equipos.php" class="side-menu__item">
+            <i class="bx bx-atom side-menu__icon"></i><span class="side-menu__label">Equipos</span>
+          </a>
+        </li>
+        <?php } ?>
+        <!-- End::Equipos -->
 
         <li class="slide__category"><span class="category-name">G E N E R A L</span></li>
 

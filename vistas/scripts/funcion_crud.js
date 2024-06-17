@@ -562,9 +562,9 @@ function ver_errores(e) {
       cancelButtonAriaLabel: 'Thumbs down'
     }).then((result) => {
       if (result.isConfirmed) {        
-        window.location.href = `${window.location.host =='localhost' || es_numero(parseFloat(window.location.host)) == true ?`${window.location.origin}/brartnet/vistas/escritorio.php`:window.location.origin+'/vistas/escritorio.php'}`;
+        window.location.href = `${window.location.host =='localhost' || es_numero(parseFloat(window.location.host)) == true ?`${window.location.origin}/gpi/vistas/escritorio.php`:window.location.origin+'/vistas/escritorio.php'}`;
       } else {
-        window.location.href = `${window.location.host =='localhost' || es_numero(parseFloat(window.location.host)) == true ?`${window.location.origin}/brartnet/vistas/escritorio.php`:window.location.origin+'/vistas/escritorio.php'}`;
+        window.location.href = `${window.location.host =='localhost' || es_numero(parseFloat(window.location.host)) == true ?`${window.location.origin}/gpi/vistas/escritorio.php`:window.location.origin+'/vistas/escritorio.php'}`;
       }
     });
   

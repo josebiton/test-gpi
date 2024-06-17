@@ -442,26 +442,7 @@
             </div>
           </div>
           <div class="p-3 border-top">
-            <div class="row g-2">
-
-              <div class="col-4">
-                <a href="">
-                  <div class="text-center p-3 related-app">
-                    <span class="d-block fs-12">Sistemas</span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-4">
-                <select class="form-select" id="mainHeaderProfile1" aria-label="Periodo">
-                  <?php echo $_SESSION['filtro_user_L1']; ?>
-                </select>
-              </div>
-
-              <div class="col-4">
-              <select class="form-select" id="mainHeaderProfile2" aria-label="Equipo">
-                  <?php echo $_SESSION['filtro_user_L2']; ?>
-                </select>
-            </div>
+            
           </div>
         </div>
         <!-- End::main-header-dropdown -->

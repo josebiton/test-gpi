@@ -52,9 +52,9 @@ function validar_response(e) {
 			$('.login-btn').html('Iniciar sesion').prop("disabled", false).removeClass('disabled btn-outline-dark').addClass('btn-primary');
 			localStorage.setItem('nube_id_usuario', JSON.stringify({
 				idusuario: e.data.usuario.idusuario,
-				idcarrera: e.data.filtro_user.filtro_a,
-				idsemestre: e.data.filtro_user.filtro_b,
-				idequipo: e.data.filtro_user.filtro_c
+				idfta: e.data.filtro_user.filtro_a,
+				idftb: e.data.filtro_user.filtro_b,
+				idftc: e.data.filtro_user.filtro_c
 			}));
 
 			if (redirecinando.file == '' || redirecinando.file == null) {	$(location).attr("href", "escritorio.php");	} else { $(location).attr("href", redirecinando.file); }			      

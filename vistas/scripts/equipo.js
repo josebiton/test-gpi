@@ -309,9 +309,9 @@ function traer_data_filtro(){
     var parsedData = JSON.parse(storedData);
     
     idusuario = parsedData.idusuario;
-    idcarrera = parsedData.idcarrera;
-    idsemestre = parsedData.idsemestre;
-    idequipo = parsedData.idequipo;
+    idcarrera = parsedData.idfta;
+    idsemestre = parsedData.idftb;
+    idequipo = parsedData.idftc;
 
   // Ahora puedes usar estas variables como necesites
   console.log(idusuario, idcarrera, idsemestre, idequipo);

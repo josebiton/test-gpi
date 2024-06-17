@@ -1,9 +1,9 @@
 // Definición de un objeto global para las variables
 var globalVars = {
   idusuario: null,
-  idcarrera: null,
-  idsemestre: null,
-  idequipo: null
+  idfta: null,
+  idftb: null,
+  idftc: null
 };
 
 // Función para inicializar las variables del objeto global desde localStorage
@@ -14,16 +14,16 @@ function initializeGlobalVariables() {
     var parsedData = JSON.parse(storedData);
     
     globalVars.idusuario = parsedData.idusuario;
-    globalVars.idcarrera = parsedData.idcarrera;
-    globalVars.idsemestre = parsedData.idsemestre;
-    globalVars.idequipo = parsedData.idequipo;
+    globalVars.idfta = parsedData.idfta;
+    globalVars.idftb = parsedData.idftb;
+    globalVars.idftc = parsedData.idftc;
 
-    console.log(globalVars.idusuario, globalVars.idcarrera, globalVars.idsemestre, globalVars.idequipo);
+    console.log(globalVars.idusuario, globalVars.idfta, globalVars.idftb, globalVars.idftc);
 
     // Establecer los valores de los selects desde localStorage
-    document.getElementById('filtro_a').value = globalVars.idcarrera;
-    document.getElementById('filtro_b').value = globalVars.idsemestre;
-    document.getElementById('filtro_c').value = globalVars.idequipo;
+    document.getElementById('filtro_a').value = globalVars.idfta;
+    document.getElementById('filtro_b').value = globalVars.idftb;
+    document.getElementById('filtro_c').value = globalVars.idftc;
   } else {
     console.log('No se encontraron datos en localStorage');
   }
@@ -37,9 +37,9 @@ function filtrar_pi() {
   var selectedEquipo = document.getElementById('filtro_c').value;
 
   // Actualizar las variables globales
-  globalVars.idcarrera = selectedCarrera;
-  globalVars.idsemestre = selectedSemestre;
-  globalVars.idequipo = selectedEquipo;
+  globalVars.idfta = selectedCarrera;
+  globalVars.idftb = selectedSemestre;
+  globalVars.idftc = selectedEquipo;
 
   // Mantener idusuario y actualizar localStorage
   localStorage.setItem('nube_id_usuario', JSON.stringify(globalVars));
