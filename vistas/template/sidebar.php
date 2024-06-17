@@ -46,7 +46,7 @@
         <!-- Start::slide -->
         <?php  if ($_SESSION['empresa'] == '1') { ?>
         <li class="slide">
-          <a href="empresa.php" class="side-menu__item">
+          <a href="trabajador.php" class="side-menu__item">
             <i class="bx bx-building side-menu__icon"></i><span class="side-menu__label"> Empresa</span>
           </a>
         </li>

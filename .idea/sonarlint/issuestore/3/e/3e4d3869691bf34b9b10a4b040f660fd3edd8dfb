@@ -1,0 +1,141 @@
+
+CWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M
+]	Web:S6842´"BNon-interactive elements should not be assigned interactive roles.(¿«úıÿÿÿÿ
+]	Web:S6842Î"BNon-interactive elements should not be assigned interactive roles.(¿«úıÿÿÿÿ
+]	Web:S6842î"BNon-interactive elements should not be assigned interactive roles.(¿«úıÿÿÿÿ
+]	Web:S6842ú"BNon-interactive elements should not be assigned interactive roles.(¿«úıÿÿÿÿ
+u	Web:S6819‹"ZUse <progress> instead of the progressbar role to ensure accessibility across all devices.(–áíÈıÿÿÿÿ
+o	Web:S6819"ZUse <progress> instead of the progressbar role to ensure accessibility across all devices.(“ÛùV
+o	Web:S6819"ZUse <progress> instead of the progressbar role to ensure accessibility across all devices.(ÉÖ»T
+u	Web:S6819‘"ZUse <progress> instead of the progressbar role to ensure accessibility across all devices.(±åáıÿÿÿÿ
+]	Web:S6842¼"BNon-interactive elements should not be assigned interactive roles.(¿«úıÿÿÿÿ
+DWeb:PageWithoutTitleCheckü"Add a <title> tag to this page.(Õ¶¯M
+DWeb:PageWithoutTitleCheck¼"Add a <title> tag to this page.(Õ¶¯M
+DWeb:PageWithoutTitleCheckü"Add a <title> tag to this page.(Õ¶¯M
+U	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(ó«ÌÜ
+V	php:S1131‚"@Remove the useless trailing whitespaces at the end of this line.(ó«ÌÜ
+V	php:S1131·"@Remove the useless trailing whitespaces at the end of this line.(„½É”
+V	php:S1131Â"@Remove the useless trailing whitespaces at the end of this line.(ó«ÌÜ
+V	php:S1131‚"@Remove the useless trailing whitespaces at the end of this line.(ó«ÌÜ
+i	php:S1192"TDefine a constant instead of duplicating this literal "template/loader.php" 4 times.(§„åÊ
+p	php:S1192"VDefine a constant instead of duplicating this literal "template/switcher.php" 4 times.(Çÿä üÿÿÿÿ
+u	php:S1192×"ZDefine a constant instead of duplicating this literal "template/search_modal.php" 4 times.(­Â˜¾ûÿÿÿÿ
+o	php:S1192Ø"TDefine a constant instead of duplicating this literal "template/footer.php" 4 times.(Í›­öùÿÿÿÿ
+l	php:S1192"RDefine a constant instead of duplicating this literal "template/head.php" 4 times.(äğÛøÿÿÿÿ
+o	php:S1192"UDefine a constant instead of duplicating this literal "template/sidebar.php" 4 times.(‚ˆ»ƒúÿÿÿÿ
+p	php:S1192Ü"UDefine a constant instead of duplicating this literal "template/scripts.php" 4 times.(‡ºÏÉøÿÿÿÿ
+n	php:S1192"TDefine a constant instead of duplicating this literal "template/header.php" 4 times.(ô’³ùøÿÿÿÿ
+z	php:S1192ñ"_Define a constant instead of duplicating this literal "template/custom_switcherjs.php" 4 times.(û… ƒşÿÿÿÿ
+@	php:S2003"&Replace "require" with "require_once".(Ë˜Šáùÿÿÿÿ
+@	php:S2003"&Replace "include" with "include_once".(äğÛøÿÿÿÿ
+@	php:S2003"&Replace "include" with "include_once".(Çÿä üÿÿÿÿ
+;	php:S2003"&Replace "include" with "include_once".(§„åÊ
+@	php:S2003"&Replace "include" with "include_once".(ô’³ùøÿÿÿÿ
+@	php:S2003"&Replace "include" with "include_once".(‚ˆ»ƒúÿÿÿÿ
+A	php:S2003×"&Replace "include" with "include_once".(­Â˜¾ûÿÿÿÿ
+A	php:S2003Ø"&Replace "include" with "include_once".(Í›­öùÿÿÿÿ
+A	php:S2003Ü"&Replace "include" with "include_once".(‡ºÏÉøÿÿÿÿ
+A	php:S2003ñ"&Replace "include" with "include_once".(û… ƒşÿÿÿÿ
+A	php:S2003ş"&Replace "include" with "include_once".(äğÛøÿÿÿÿ
+A	php:S2003†"&Replace "include" with "include_once".(Çÿä üÿÿÿÿ
+<	php:S2003‡"&Replace "include" with "include_once".(§„åÊ
+A	php:S2003Š"&Replace "include" with "include_once".(ô’³ùøÿÿÿÿ
+A	php:S2003‹"&Replace "include" with "include_once".(‚ˆ»ƒúÿÿÿÿ
+A	php:S2003—"&Replace "include" with "include_once".(­Â˜¾ûÿÿÿÿ
+A	php:S2003˜"&Replace "include" with "include_once".(Í›­öùÿÿÿÿ
+A	php:S2003œ"&Replace "include" with "include_once".(‡ºÏÉøÿÿÿÿ
+A	php:S2003±"&Replace "include" with "include_once".(û… ƒşÿÿÿÿ
+A	php:S2003¾"&Replace "include" with "include_once".(äğÛøÿÿÿÿ
+A	php:S2003Æ"&Replace "include" with "include_once".(Çÿä üÿÿÿÿ
+<	php:S2003Ç"&Replace "include" with "include_once".(§„åÊ
+A	php:S2003Ê"&Replace "include" with "include_once".(ô’³ùøÿÿÿÿ
+A	php:S2003Ë"&Replace "include" with "include_once".(‚ˆ»ƒúÿÿÿÿ
+A	php:S2003×"&Replace "include" with "include_once".(­Â˜¾ûÿÿÿÿ
+A	php:S2003Ø"&Replace "include" with "include_once".(Í›­öùÿÿÿÿ
+A	php:S2003Ü"&Replace "include" with "include_once".(‡ºÏÉøÿÿÿÿ
+A	php:S2003ñ"&Replace "include" with "include_once".(û… ƒşÿÿÿÿ
+A	php:S2003ş"&Replace "include" with "include_once".(äğÛøÿÿÿÿ
+A	php:S2003†"&Replace "include" with "include_once".(Çÿä üÿÿÿÿ
+<	php:S2003‡"&Replace "include" with "include_once".(§„åÊ
+A	php:S2003Š"&Replace "include" with "include_once".(ô’³ùøÿÿÿÿ
+A	php:S2003‹"&Replace "include" with "include_once".(‚ˆ»ƒúÿÿÿÿ
+A	php:S2003—"&Replace "include" with "include_once".(­Â˜¾ûÿÿÿÿ
+A	php:S2003˜"&Replace "include" with "include_once".(Í›­öùÿÿÿÿ
+A	php:S2003œ"&Replace "include" with "include_once".(‡ºÏÉøÿÿÿÿ
+A	php:S2003±"&Replace "include" with "include_once".(û… ƒşÿÿÿÿ
+J	php:S6600"0Remove the parentheses from this "include" call.(äğÛøÿÿÿÿ
+J	php:S6600"0Remove the parentheses from this "include" call.(Çÿä üÿÿÿÿ
+E	php:S6600"0Remove the parentheses from this "include" call.(§„åÊ
+J	php:S6600"0Remove the parentheses from this "include" call.(ô’³ùøÿÿÿÿ
+J	php:S6600"0Remove the parentheses from this "include" call.(‚ˆ»ƒúÿÿÿÿ
+K	php:S6600×"0Remove the parentheses from this "include" call.(­Â˜¾ûÿÿÿÿ
+K	php:S6600Ø"0Remove the parentheses from this "include" call.(Í›­öùÿÿÿÿ
+K	php:S6600Ü"0Remove the parentheses from this "include" call.(‡ºÏÉøÿÿÿÿ
+K	php:S6600ñ"0Remove the parentheses from this "include" call.(û… ƒşÿÿÿÿ
+K	php:S6600ş"0Remove the parentheses from this "include" call.(äğÛøÿÿÿÿ
+K	php:S6600†"0Remove the parentheses from this "include" call.(Çÿä üÿÿÿÿ
+F	php:S6600‡"0Remove the parentheses from this "include" call.(§„åÊ
+K	php:S6600Š"0Remove the parentheses from this "include" call.(ô’³ùøÿÿÿÿ
+K	php:S6600‹"0Remove the parentheses from this "include" call.(‚ˆ»ƒúÿÿÿÿ
+K	php:S6600—"0Remove the parentheses from this "include" call.(­Â˜¾ûÿÿÿÿ
+K	php:S6600˜"0Remove the parentheses from this "include" call.(Í›­öùÿÿÿÿ
+K	php:S6600œ"0Remove the parentheses from this "include" call.(‡ºÏÉøÿÿÿÿ
+K	php:S6600±"0Remove the parentheses from this "include" call.(û… ƒşÿÿÿÿ
+K	php:S6600¾"0Remove the parentheses from this "include" call.(äğÛøÿÿÿÿ
+K	php:S6600Æ"0Remove the parentheses from this "include" call.(Çÿä üÿÿÿÿ
+F	php:S6600Ç"0Remove the parentheses from this "include" call.(§„åÊ
+K	php:S6600Ê"0Remove the parentheses from this "include" call.(ô’³ùøÿÿÿÿ
+K	php:S6600Ë"0Remove the parentheses from this "include" call.(‚ˆ»ƒúÿÿÿÿ
+K	php:S6600×"0Remove the parentheses from this "include" call.(­Â˜¾ûÿÿÿÿ
+K	php:S6600Ø"0Remove the parentheses from this "include" call.(Í›­öùÿÿÿÿ
+K	php:S6600Ü"0Remove the parentheses from this "include" call.(‡ºÏÉøÿÿÿÿ
+K	php:S6600ñ"0Remove the parentheses from this "include" call.(û… ƒşÿÿÿÿ
+K	php:S6600ş"0Remove the parentheses from this "include" call.(äğÛøÿÿÿÿ
+K	php:S6600†"0Remove the parentheses from this "include" call.(Çÿä üÿÿÿÿ
+F	php:S6600‡"0Remove the parentheses from this "include" call.(§„åÊ
+K	php:S6600Š"0Remove the parentheses from this "include" call.(ô’³ùøÿÿÿÿ
+K	php:S6600‹"0Remove the parentheses from this "include" call.(‚ˆ»ƒúÿÿÿÿ
+K	php:S6600—"0Remove the parentheses from this "include" call.(­Â˜¾ûÿÿÿÿ
+K	php:S6600˜"0Remove the parentheses from this "include" call.(Í›­öùÿÿÿÿ
+K	php:S6600œ"0Remove the parentheses from this "include" call.(‡ºÏÉøÿÿÿÿ
+K	php:S6600±"0Remove the parentheses from this "include" call.(û… ƒşÿÿÿÿ
+R	php:S1793÷"<Replace this "else if" keyword sequence by "elseif" keyword.(½ƒï
+R	php:S1793·"<Replace this "else if" keyword sequence by "elseif" keyword.(„½É”
+W	php:S1793÷"<Replace this "else if" keyword sequence by "elseif" keyword.(Ö´Ÿ‡şÿÿÿÿ
+f	php:S4833"LReplace "require" with namespace import mechanism through the "use" keyword.(Ë˜Šáùÿÿÿÿ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(äğÛøÿÿÿÿ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(Çÿä üÿÿÿÿ
+a	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(§„åÊ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(ô’³ùøÿÿÿÿ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(‚ˆ»ƒúÿÿÿÿ
+g	php:S4833×"LReplace "include" with namespace import mechanism through the "use" keyword.(­Â˜¾ûÿÿÿÿ
+g	php:S4833Ø"LReplace "include" with namespace import mechanism through the "use" keyword.(Í›­öùÿÿÿÿ
+g	php:S4833Ü"LReplace "include" with namespace import mechanism through the "use" keyword.(‡ºÏÉøÿÿÿÿ
+g	php:S4833ñ"LReplace "include" with namespace import mechanism through the "use" keyword.(û… ƒşÿÿÿÿ
+g	php:S4833ş"LReplace "include" with namespace import mechanism through the "use" keyword.(äğÛøÿÿÿÿ
+g	php:S4833†"LReplace "include" with namespace import mechanism through the "use" keyword.(Çÿä üÿÿÿÿ
+b	php:S4833‡"LReplace "include" with namespace import mechanism through the "use" keyword.(§„åÊ
+g	php:S4833Š"LReplace "include" with namespace import mechanism through the "use" keyword.(ô’³ùøÿÿÿÿ
+g	php:S4833‹"LReplace "include" with namespace import mechanism through the "use" keyword.(‚ˆ»ƒúÿÿÿÿ
+g	php:S4833—"LReplace "include" with namespace import mechanism through the "use" keyword.(­Â˜¾ûÿÿÿÿ
+g	php:S4833˜"LReplace "include" with namespace import mechanism through the "use" keyword.(Í›­öùÿÿÿÿ
+g	php:S4833œ"LReplace "include" with namespace import mechanism through the "use" keyword.(‡ºÏÉøÿÿÿÿ
+g	php:S4833±"LReplace "include" with namespace import mechanism through the "use" keyword.(û… ƒşÿÿÿÿ
+g	php:S4833¾"LReplace "include" with namespace import mechanism through the "use" keyword.(äğÛøÿÿÿÿ
+g	php:S4833Æ"LReplace "include" with namespace import mechanism through the "use" keyword.(Çÿä üÿÿÿÿ
+b	php:S4833Ç"LReplace "include" with namespace import mechanism through the "use" keyword.(§„åÊ
+g	php:S4833Ê"LReplace "include" with namespace import mechanism through the "use" keyword.(ô’³ùøÿÿÿÿ
+g	php:S4833Ë"LReplace "include" with namespace import mechanism through the "use" keyword.(‚ˆ»ƒúÿÿÿÿ
+g	php:S4833×"LReplace "include" with namespace import mechanism through the "use" keyword.(­Â˜¾ûÿÿÿÿ
+g	php:S4833Ø"LReplace "include" with namespace import mechanism through the "use" keyword.(Í›­öùÿÿÿÿ
+g	php:S4833Ü"LReplace "include" with namespace import mechanism through the "use" keyword.(‡ºÏÉøÿÿÿÿ
+g	php:S4833ñ"LReplace "include" with namespace import mechanism through the "use" keyword.(û… ƒşÿÿÿÿ
+g	php:S4833ş"LReplace "include" with namespace import mechanism through the "use" keyword.(äğÛøÿÿÿÿ
+g	php:S4833†"LReplace "include" with namespace import mechanism through the "use" keyword.(Çÿä üÿÿÿÿ
+b	php:S4833‡"LReplace "include" with namespace import mechanism through the "use" keyword.(§„åÊ
+g	php:S4833Š"LReplace "include" with namespace import mechanism through the "use" keyword.(ô’³ùøÿÿÿÿ
+g	php:S4833‹"LReplace "include" with namespace import mechanism through the "use" keyword.(‚ˆ»ƒúÿÿÿÿ
+g	php:S4833—"LReplace "include" with namespace import mechanism through the "use" keyword.(­Â˜¾ûÿÿÿÿ
+g	php:S4833˜"LReplace "include" with namespace import mechanism through the "use" keyword.(Í›­öùÿÿÿÿ
+g	php:S4833œ"LReplace "include" with namespace import mechanism through the "use" keyword.(‡ºÏÉøÿÿÿÿ
+g	php:S4833±"LReplace "include" with namespace import mechanism through the "use" keyword.(û… ƒşÿÿÿÿ

@@ -1,0 +1,11 @@
+
+uphp:S100"\Rename function "mostrar_tecnico_redes" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(ìÌÒýÿÿÿÿ
+nphp:S100"URename function "mostrar_planes" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(íïÿþøÿÿÿÿ
+c	php:S1784"IExplicitly mention the visibility of this method "mostrar_tecnico_redes".(ìÌÒýÿÿÿÿ
+\	php:S1784"BExplicitly mention the visibility of this method "mostrar_planes".(íïÿþøÿÿÿÿ
+7	php:S1780"Remove this closing tag "?>".(Ö‘äÏúÿÿÿÿ
+C	php:S1781")Write this "Class" keyword in lower case.(ƒ€ÆÀýÿÿÿÿ
+>	php:S1125")Remove the literal "false" boolean value.(ÐÜŒë
+C	php:S1125")Remove the literal "false" boolean value.(È©ë›ûÿÿÿÿ
+;	php:S2003"&Replace "require" with "require_once".(ˆùê¬
+a	php:S4833"LReplace "require" with namespace import mechanism through the "use" keyword.(ˆùê¬

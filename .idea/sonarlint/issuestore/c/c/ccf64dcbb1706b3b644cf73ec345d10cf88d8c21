@@ -1,0 +1,148 @@
+
+CWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M
+l Web:TableHeaderHasIdOrScopeCheckB";Add either an 'id' or a 'scope' attribute to this <th> tag.(©Ã¿ºÿÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheckC";Add either an 'id' or a 'scope' attribute to this <th> tag.(¡éùıÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckD";Add either an 'id' or a 'scope' attribute to this <th> tag.(ü›”ï
+g Web:TableHeaderHasIdOrScopeCheckE";Add either an 'id' or a 'scope' attribute to this <th> tag.(ôÁÂØ
+l Web:TableHeaderHasIdOrScopeCheckF";Add either an 'id' or a 'scope' attribute to this <th> tag.(Í»ğÿûÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheckG";Add either an 'id' or a 'scope' attribute to this <th> tag.(á¾Ÿøúÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckH";Add either an 'id' or a 'scope' attribute to this <th> tag.(Æíúï
+l Web:TableHeaderHasIdOrScopeCheckI";Add either an 'id' or a 'scope' attribute to this <th> tag.(…Áüıÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckK";Add either an 'id' or a 'scope' attribute to this <th> tag.(ü›”ï
+f Web:TableHeaderHasIdOrScopeCheckL";Add either an 'id' or a 'scope' attribute to this <th> tag.(¯Îà
+g Web:TableHeaderHasIdOrScopeCheckM";Add either an 'id' or a 'scope' attribute to this <th> tag.(î¡·¿
+g Web:TableHeaderHasIdOrScopeCheckN";Add either an 'id' or a 'scope' attribute to this <th> tag.(¬Ò›Õ
+g Web:TableHeaderHasIdOrScopeCheckO";Add either an 'id' or a 'scope' attribute to this <th> tag.(ôÁÂØ
+l Web:TableHeaderHasIdOrScopeCheckV";Add either an 'id' or a 'scope' attribute to this <th> tag.(©Ã¿ºÿÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheckW";Add either an 'id' or a 'scope' attribute to this <th> tag.(¡éùıÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckX";Add either an 'id' or a 'scope' attribute to this <th> tag.(ü›”ï
+g Web:TableHeaderHasIdOrScopeCheckY";Add either an 'id' or a 'scope' attribute to this <th> tag.(ôÁÂØ
+l Web:TableHeaderHasIdOrScopeCheckZ";Add either an 'id' or a 'scope' attribute to this <th> tag.(Í»ğÿûÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheck[";Add either an 'id' or a 'scope' attribute to this <th> tag.(á¾Ÿøúÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck\";Add either an 'id' or a 'scope' attribute to this <th> tag.(Æíúï
+l Web:TableHeaderHasIdOrScopeCheck]";Add either an 'id' or a 'scope' attribute to this <th> tag.(…Áüıÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck_";Add either an 'id' or a 'scope' attribute to this <th> tag.(ü›”ï
+f Web:TableHeaderHasIdOrScopeCheck`";Add either an 'id' or a 'scope' attribute to this <th> tag.(¯Îà
+g Web:TableHeaderHasIdOrScopeChecka";Add either an 'id' or a 'scope' attribute to this <th> tag.(î¡·¿
+g Web:TableHeaderHasIdOrScopeCheckb";Add either an 'id' or a 'scope' attribute to this <th> tag.(¬Ò›Õ
+g Web:TableHeaderHasIdOrScopeCheckc";Add either an 'id' or a 'scope' attribute to this <th> tag.(ôÁÂØ
+i	Web:S6819Œ"SUse <output> instead of the status role to ensure accessibility across all devices.(Ş£Øå
+€,Web:MouseEventWithoutKeyboardEquivalentCheck–"BAdd a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <span> tag.(ü«Éñüÿÿÿÿ
+Ş	Web:S6848–"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(ü«Éñüÿÿÿÿ
+{,Web:MouseEventWithoutKeyboardEquivalentCheck¸"BAdd a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <span> tag.(ÄßÇß
+Ù	Web:S6848¸"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(ÄßÇß
+h	Web:S6847ã"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(Ìª¦
+E	Web:S6844ì"*Anchor tags should not be used as buttons.(Àø¶öşÿÿÿÿ
+E	Web:S6844í"*Anchor tags should not be used as buttons.(Óø°åıÿÿÿÿ
+i	Web:S6819ö"SUse <output> instead of the status role to ensure accessibility across all devices.(è¬³
+p	Web:S6819ı"ZUse <progress> instead of the progressbar role to ensure accessibility across all devices.(Ì¢ÇŒ
+m Web:TableHeaderHasIdOrScopeCheck±";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÙíÏ¼ıÿÿÿÿ
+h Web:TableHeaderHasIdOrScopeCheck²";Add either an 'id' or a 'scope' attribute to this <th> tag.(ü›”ï
+h Web:TableHeaderHasIdOrScopeCheck³";Add either an 'id' or a 'scope' attribute to this <th> tag.(è¨€²
+m Web:TableHeaderHasIdOrScopeCheck´";Add either an 'id' or a 'scope' attribute to this <th> tag.(Ş¶ÿşÿÿÿÿ
+m Web:TableHeaderHasIdOrScopeCheck»";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÙíÏ¼ıÿÿÿÿ
+h Web:TableHeaderHasIdOrScopeCheck¼";Add either an 'id' or a 'scope' attribute to this <th> tag.(ü›”ï
+m Web:TableHeaderHasIdOrScopeCheck½";Add either an 'id' or a 'scope' attribute to this <th> tag.( Ÿüğûÿÿÿÿ
+m Web:TableHeaderHasIdOrScopeCheck¾";Add either an 'id' or a 'scope' attribute to this <th> tag.(Ş¶ÿşÿÿÿÿ
+OWeb:AvoidCommentedOutCodeCheckÓ"Remove this commented out code.(ñÆÜæüÿÿÿÿ
+Z	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(˜åãéøÿÿÿÿ
+U	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(ó«ÌÜ
+Z	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(ùÖ‚ˆøÿÿÿÿ
+Z	php:S1131)"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+T	php:S1131-"@Remove the useless trailing whitespaces at the end of this line.(¢åÈ
+Z	php:S11315"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+Z	php:S1131<"@Remove the useless trailing whitespaces at the end of this line.(Ÿø¡·şÿÿÿÿ
+Z	php:S1131C"@Remove the useless trailing whitespaces at the end of this line.(¡éùıÿÿÿÿ
+Z	php:S1131F"@Remove the useless trailing whitespaces at the end of this line.(Í»ğÿûÿÿÿÿ
+Z	php:S1131I"@Remove the useless trailing whitespaces at the end of this line.(…Áüıÿÿÿÿ
+Z	php:S1131W"@Remove the useless trailing whitespaces at the end of this line.(¡éùıÿÿÿÿ
+Z	php:S1131Z"@Remove the useless trailing whitespaces at the end of this line.(Í»ğÿûÿÿÿÿ
+Z	php:S1131g"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+T	php:S1131i"@Remove the useless trailing whitespaces at the end of this line.(ãúÉr
+U	php:S1131m"@Remove the useless trailing whitespaces at the end of this line.(³‰Ÿ
+Z	php:S1131n"@Remove the useless trailing whitespaces at the end of this line.(‡ß¦Éşÿÿÿÿ
+U	php:S1131o"@Remove the useless trailing whitespaces at the end of this line.(½Ğ§
+U	php:S1131p"@Remove the useless trailing whitespaces at the end of this line.(­ËñÁ
+[	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+V	php:S1131ˆ"@Remove the useless trailing whitespaces at the end of this line.(¡´–Ê
+[	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+V	php:S1131—"@Remove the useless trailing whitespaces at the end of this line.(ŠÊõİ
+[	php:S1131›"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131£"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131«"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131³"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131»"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131¼"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Ã"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Ë"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Ì"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131à"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131è"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131ğ"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131÷"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+V	php:S1131ı"@Remove the useless trailing whitespaces at the end of this line.(©Àœ
+[	php:S1131ÿ"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131†"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131”"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131©"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131±"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131¹"@Remove the useless trailing whitespaces at the end of this line.(ó¹’Êùÿÿÿÿ
+[	php:S1131¼"@Remove the useless trailing whitespaces at the end of this line.(Æ¯Ôëûÿÿÿÿ
+[	php:S1131¾"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Æ"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Î"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Ö"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131ğ"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131õ"@Remove the useless trailing whitespaces at the end of this line.(ö®õâúÿÿÿÿ
+[	php:S1131ù"@Remove the useless trailing whitespaces at the end of this line.(´‹ñèùÿÿÿÿ
+V	php:S1131ı"@Remove the useless trailing whitespaces at the end of this line.(Ì¢ÇŒ
+V	php:S1131ş"@Remove the useless trailing whitespaces at the end of this line.(Ó…´¹
+[	php:S1131„"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131…"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Š"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131‹"@Remove the useless trailing whitespaces at the end of this line.(ø”§êüÿÿÿÿ
+V	php:S1131Œ"@Remove the useless trailing whitespaces at the end of this line.(œÛ§
+[	php:S1131“"@Remove the useless trailing whitespaces at the end of this line.(×ò¨ïøÿÿÿÿ
+V	php:S1131 "@Remove the useless trailing whitespaces at the end of this line.(µ®¥û
+[	php:S1131¤"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131±"@Remove the useless trailing whitespaces at the end of this line.(ÙíÏ¼ıÿÿÿÿ
+[	php:S1131´"@Remove the useless trailing whitespaces at the end of this line.(Ş¶ÿşÿÿÿÿ
+[	php:S1131»"@Remove the useless trailing whitespaces at the end of this line.(ÙíÏ¼ıÿÿÿÿ
+[	php:S1131¾"@Remove the useless trailing whitespaces at the end of this line.(Ş¶ÿşÿÿÿÿ
+[	php:S1131Ä"@Remove the useless trailing whitespaces at the end of this line.(«Ú¶åÿÿÿÿÿ
+[	php:S1131È"@Remove the useless trailing whitespaces at the end of this line.(®’Öÿÿÿÿÿ
+[	php:S1131Ğ"@Remove the useless trailing whitespaces at the end of this line.(û… ƒşÿÿÿÿ
+@	php:S2003"&Replace "require" with "require_once".(Ë˜Šáùÿÿÿÿ
+@	php:S2003"&Replace "include" with "include_once".(˜åãéøÿÿÿÿ
+@	php:S2003"&Replace "include" with "include_once".(Çÿä üÿÿÿÿ
+;	php:S2003"&Replace "include" with "include_once".(§„åÊ
+@	php:S2003"&Replace "include" with "include_once".(ô’³ùøÿÿÿÿ
+@	php:S2003"&Replace "include" with "include_once".(‚ˆ»ƒúÿÿÿÿ
+A	php:S2003“"&Replace "include" with "include_once".(×ò¨ïøÿÿÿÿ
+A	php:S2003Ê"&Replace "include" with "include_once".(­Â˜¾ûÿÿÿÿ
+A	php:S2003Ë"&Replace "include" with "include_once".(Í›­öùÿÿÿÿ
+A	php:S2003Ï"&Replace "include" with "include_once".(‡ºÏÉøÿÿÿÿ
+A	php:S2003Ğ"&Replace "include" with "include_once".(û… ƒşÿÿÿÿ
+J	php:S6600"0Remove the parentheses from this "include" call.(˜åãéøÿÿÿÿ
+J	php:S6600"0Remove the parentheses from this "include" call.(Çÿä üÿÿÿÿ
+E	php:S6600"0Remove the parentheses from this "include" call.(§„åÊ
+J	php:S6600"0Remove the parentheses from this "include" call.(ô’³ùøÿÿÿÿ
+J	php:S6600"0Remove the parentheses from this "include" call.(‚ˆ»ƒúÿÿÿÿ
+K	php:S6600“"0Remove the parentheses from this "include" call.(×ò¨ïøÿÿÿÿ
+K	php:S6600Ê"0Remove the parentheses from this "include" call.(­Â˜¾ûÿÿÿÿ
+K	php:S6600Ë"0Remove the parentheses from this "include" call.(Í›­öùÿÿÿÿ
+K	php:S6600Ï"0Remove the parentheses from this "include" call.(‡ºÏÉøÿÿÿÿ
+K	php:S6600Ğ"0Remove the parentheses from this "include" call.(û… ƒşÿÿÿÿ
+f	php:S4833"LReplace "require" with namespace import mechanism through the "use" keyword.(Ë˜Šáùÿÿÿÿ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(˜åãéøÿÿÿÿ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(Çÿä üÿÿÿÿ
+a	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(§„åÊ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(ô’³ùøÿÿÿÿ
+f	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(‚ˆ»ƒúÿÿÿÿ
+g	php:S4833“"LReplace "include" with namespace import mechanism through the "use" keyword.(×ò¨ïøÿÿÿÿ
+g	php:S4833Ê"LReplace "include" with namespace import mechanism through the "use" keyword.(­Â˜¾ûÿÿÿÿ
+g	php:S4833Ë"LReplace "include" with namespace import mechanism through the "use" keyword.(Í›­öùÿÿÿÿ
+g	php:S4833Ï"LReplace "include" with namespace import mechanism through the "use" keyword.(‡ºÏÉøÿÿÿÿ
+g	php:S4833Ğ"LReplace "include" with namespace import mechanism through the "use" keyword.(û… ƒşÿÿÿÿ
