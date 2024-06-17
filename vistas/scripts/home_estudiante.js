@@ -53,7 +53,7 @@ function filtro_ub(){
   var selt_idcarrera = $("#filtro_a").val();
   var $car = selt_idcarrera && selt_idcarrera !== "" ? selt_idcarrera : idcarrera;
   
-  $.post("../ajax/home.php?op=filtro_ub", {idcarrera: $car}, function (e, status) {
+  $.post("../ajax/home.php?op=filtro_ub", {idcarrera: $car, idusuario: idusuario}, function (e, status) {
 		e = JSON.parse(e);
     if (e.status == true) {
       //listar los datos de una carrera VALUE = e.data.idcarrera  TEXT = e.data.nombre_carrera
@@ -75,7 +75,7 @@ function filtro_uc(){
   var selt_idsemestre = $("#filtro_b").val();
   var $id = selt_idsemestre && selt_idsemestre !== "" ? selt_idsemestre : idsemestre;
 
-  $.post("../ajax/home.php?op=filtro_uc", {idsemestre: $id}, function (e, status) {
+  $.post("../ajax/home.php?op=filtro_uc", {idsemestre: $id, idusuario: idusuario}, function (e, status) {
 		e = JSON.parse(e);
     if (e.status == true) {
       //listar los datos de una carrera VALUE = e.data.idcarrera  TEXT = e.data.nombre_carrera
@@ -91,6 +91,27 @@ function filtro_uc(){
 
 }
 
+
+// Función para actualizar localStorage con los nuevos valores y recargar la página
+function filtrar_pi() {
+  // Capturar los valores seleccionados en los selects
+  var selectedCarrera = document.getElementById('filtro_a').value;
+  var selectedSemestre = document.getElementById('filtro_b').value;
+  var selectedEquipo = document.getElementById('filtro_c').value;
+
+  // Actualizar las variables globales
+  globalVars.idfta = selectedCarrera;
+  globalVars.idftb = selectedSemestre;
+  globalVars.idftc = selectedEquipo;
+
+  // Mantener idusuario y actualizar localStorage
+  localStorage.setItem('nube_id_usuario', JSON.stringify(globalVars));
+
+  console.log('LocalStorage actualizado', globalVars);
+
+  // Recargar la página para aplicar los cambios
+  location.reload();
+}
 
 
 function traer_data_filtro(){

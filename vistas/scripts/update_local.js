@@ -21,34 +21,21 @@ function initializeGlobalVariables() {
     console.log(globalVars.idusuario, globalVars.idfta, globalVars.idftb, globalVars.idftc);
 
     // Establecer los valores de los selects desde localStorage
-    document.getElementById('filtro_a').value = globalVars.idfta;
-    document.getElementById('filtro_b').value = globalVars.idftb;
-    document.getElementById('filtro_c').value = globalVars.idftc;
+    if("#filtro_a" == ""){
+      document.getElementById('filtro_a').value = globalVars.idfta;
+      document.getElementById('filtro_b').value = globalVars.idftb;
+      document.getElementById('filtro_c').value = globalVars.idftc;
+    } else if ("#filtro_a1" == ""){
+      document.getElementById('filtro_a1').value = globalVars.idfta;
+      document.getElementById('filtro_b1').value = globalVars.idftb;
+      document.getElementById('filtro_c1').value = globalVars.idftc;
+    }
   } else {
     console.log('No se encontraron datos en localStorage');
   }
 }
 
-// Función para actualizar localStorage con los nuevos valores y recargar la página
-function filtrar_pi() {
-  // Capturar los valores seleccionados en los selects
-  var selectedCarrera = document.getElementById('filtro_a').value;
-  var selectedSemestre = document.getElementById('filtro_b').value;
-  var selectedEquipo = document.getElementById('filtro_c').value;
 
-  // Actualizar las variables globales
-  globalVars.idfta = selectedCarrera;
-  globalVars.idftb = selectedSemestre;
-  globalVars.idftc = selectedEquipo;
-
-  // Mantener idusuario y actualizar localStorage
-  localStorage.setItem('nube_id_usuario', JSON.stringify(globalVars));
-
-  console.log('LocalStorage actualizado', globalVars);
-
-  // Recargar la página para aplicar los cambios
-  location.reload();
-}
 
 // Inicializar las variables globales al cargar el archivo
 initializeGlobalVariables();

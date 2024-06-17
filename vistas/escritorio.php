@@ -91,23 +91,23 @@
                 <!-- Start::page-header -->
 
                 <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
-                  <div class="col-xl-6">
+                  <div class="col-xl-7">
                     <p class="fw-semibold fs-18 mb-0">GPI - DOCENTE</p>
                     <span class="fs-semibold text-muted">Orienta y califica a tus alunnos de forma ética y eficiente</span>
                   </div>
-                  <div class="col-xl-9 ">
+                  <div class="col-xl-8">
                     <div class="row d-flex align-items-end">
+                        <div class="col-xl-2 p-2">
+                          <select name="filtro_a" id="filtro_a1" class="form-select" onchange="filtro_cb();"> </select>
+                        </div>
                         <div class="col-xl-3 p-2">
-                          <select name="filtro_a" id="filtro_a" class="form-select" onchange=""> </select>
+                          <select name="filtro_b1" id="filtro_b1" class="form-select" onchange="filtro_cc();"> </select>
+                        </div>
+                        <div class="col-xl-1 p-2">
+                          <select name="filtro_c1" id="filtro_c1" class="form-select"> </select>
                         </div>
                         <div class="col-xl-2 p-2">
-                          <select name="filtro_b" id="filtro_b" class="form-select" onchange=""> </select>
-                        </div>
-                        <div class="col-xl-2 p-2">
-                          <select name="filtro_c" id="filtro_c" class="form-select"> </select>
-                        </div>
-                        <div class="col-xl-2 p-2">
-                          <button type="button" class="btn btn-primary btn-wave" onclick="">
+                          <button type="button" class="btn btn-primary btn-wave" onclick="filtrar_curso();">
                             <i class="ri-filter-3-fill me-2 align-middle d-inline-block"></i>Filtrar
                           </button>
                         </div>
@@ -161,10 +161,10 @@
           <script src="../assets/libs/chart.js/chart.min.js"></script>
 
           <!-- CRM-Dashboard -->
-          <script src="../assets/js/crm-dashboard.js"></script>
+          <!-- <script src="../assets/js/crm-dashboard.js"></script> -->
 
           <!-- Custom JS -->
-          <script src="../assets/js/custom.js"></script>
+          <!-- <script src="../assets/js/custom.js"></script> -->
 
           <script src="scripts/funcion_crud.js"></script>
            

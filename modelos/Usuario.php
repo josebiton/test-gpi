@@ -43,7 +43,7 @@ class Usuario
       if ($user['data']['tipo_persona'] == 'Coordinador') {
         // Lógica para Coordinador
       } else if ($user['data']['tipo_persona'] == 'Docente') { //CURSO - CICLO - GRUPO
-        $sql_1 = "SELECT c.idcurso AS filtro_a, s.idsemestre AS filtro_b, s.idsemestre AS filtro_c, c.asignatura, s.ciclo, s.grupo
+        $sql_1 = "SELECT s.idsemestre AS filtro_a, c.idcurso AS filtro_b, s.idsemestre AS filtro_c, c.asignatura, s.ciclo, s.grupo
                   FROM usuario AS u
                   INNER JOIN persona AS p ON u.idpersona = p.idpersona
                   INNER JOIN cursos_x_semestre AS cs ON cs.iddocente = p.idpersona
@@ -52,6 +52,7 @@ class Usuario
                   WHERE p.tipo_persona = 'Docente' AND u.login = '$login' AND u.password = '$clave'
                   ORDER BY s.periodo DESC LIMIT 1;";
         $filtros = ejecutarConsultaSimpleFila($sql_1);
+        
       } else if ($user['data']['tipo_persona'] == 'Estudiante') { //CARRERA - PERIODO - EQUIPO
         $sql_1 = "SELECT p.nombres, c.idcarrera AS filtro_a, c.nombre_carrera, s.idsemestre AS filtro_b, s.periodo, epi.idequipos_pi AS filtro_c, epi.nombre_equipo
                   FROM usuario AS u
