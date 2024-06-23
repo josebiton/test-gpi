@@ -95,18 +95,18 @@
                     <p class="fw-semibold fs-18 mb-0">GPI - DOCENTE</p>
                     <span class="fs-semibold text-muted">Orienta y califica a tus alunnos de forma ética y eficiente</span>
                   </div>
-                  <div class="col-xl-8">
+                  <div class="col-xl-5">
                     <div class="row d-flex align-items-end">
-                        <div class="col-xl-2 p-2">
+                        <div class="col-xl-3 p-2">
                           <select name="filtro_a" id="filtro_a1" class="form-select" onchange="filtro_cb();"> </select>
                         </div>
-                        <div class="col-xl-3 p-2">
+                        <div class="col-xl-4 p-2">
                           <select name="filtro_b1" id="filtro_b1" class="form-select" onchange="filtro_cc();"> </select>
                         </div>
-                        <div class="col-xl-1 p-2">
+                        <div class="col-xl-2 p-2">
                           <select name="filtro_c1" id="filtro_c1" class="form-select"> </select>
                         </div>
-                        <div class="col-xl-2 p-2">
+                        <div class="col-xl-3 p-2">
                           <button type="button" class="btn btn-primary btn-wave" onclick="filtrar_curso();">
                             <i class="ri-filter-3-fill me-2 align-middle d-inline-block"></i>Filtrar
                           </button>
@@ -119,14 +119,7 @@
                 <!-- End::page-header -->
 
                 <!-- Start::row-1 -->
-                <div class="row">
-                  <div class="col-xxl-12 col-xl-12">
-                    <div class="card custom-card ">                  
-                      <div class="card-body">
-                        <!-- CUERPO DEL ESCRITORIO DECENTE -->
-                      </div>
-                    </div>
-                  </div>
+                <div class="row gy-3" id="div-lista-de-equipos">
                   
                 </div>
                 <!-- End::row-1 -->

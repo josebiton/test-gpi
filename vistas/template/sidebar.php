@@ -76,10 +76,10 @@
         <!-- End::P.Proyecto -->
         
         <!-- Alunnos -->
-        <?php  if ($_SESSION['alunnos'] == '1') { ?>
+        <?php  if ($_SESSION['alumnos'] == '1') { ?>
         <li class="slide">
-          <a href="alunnos.php" class="side-menu__item">
-            <i class="bx bx-atom side-menu__icon"></i><span class="side-menu__label">Alunnos</span>
+          <a href="alumnos.php" class="side-menu__item">
+            <i class="bx bx-group side-menu__icon"></i><span class="side-menu__label">Alumnos</span>
           </a>
         </li>
         <?php } ?>
@@ -89,7 +89,7 @@
         <?php  if ($_SESSION['equipos'] == '1') { ?>
         <li class="slide">
           <a href="equipos.php" class="side-menu__item">
-            <i class="bx bx-atom side-menu__icon"></i><span class="side-menu__label">Equipos</span>
+            <i class="bx bx-book side-menu__icon"></i><span class="side-menu__label">Equipos</span>
           </a>
         </li>
         <?php } ?>
