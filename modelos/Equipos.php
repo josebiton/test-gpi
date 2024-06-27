@@ -112,4 +112,13 @@ class Equipos{
 
     return array('status' => true, 'message' => 'Equipo y estudiantes actualizados correctamente');
   }
+
+  public function datos_equipo($idequipo){
+    $sql = "SELECT pi.idperfil_del_pi, pi.titulo_proyecto, pi.descripcion_proyecto, pi.link_prototipo, pi.fecha_inicio, pi.fecha_cierre
+            FROM equipos_pi AS eq
+            INNER JOIN perfil_del_pi AS pi ON eq.idequipos_pi = pi.idnum_equipo
+            WHERE eq.idequipos_pi = '$idequipo' AND eq.estado = '1' AND eq.estado_delete = '1'";
+    return ejecutarConsultaSimpleFila($sql);
+  }
+
 }

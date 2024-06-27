@@ -127,10 +127,22 @@
 
                 <!-- Start::row-3 -->
                 <div class="row" id="div-ver-equipo" style="display: none;">
-                  <div class="col-xxl-12 col-xl-12">
+                  <div class="col-xxl-6 col-xl-6">
                     <div class="card custom-card">            
                       <div class="card-body">
+                        <div class="row align-items-center gy-3" id="div-datos-pi">
+
                            
+                        </div>
+                        <div class="row" id="div-list-integrantes"></div>
+                      </div>                
+                    </div> <!-- /.card -->              
+                  </div> <!-- /.col --> 
+
+                  <div class="col-xxl-6 col-xl-6">
+                    <div class="card custom-card">            
+                      <div class="card-body">
+                        <div class="row" id="div-tabla-hitos"></div>
                       </div>                
                     </div> <!-- /.card -->              
                   </div> <!-- /.col --> 

@@ -74,6 +74,10 @@ if (!isset($_SESSION["user_nombre"])) {
         echo json_encode($rspta);
       break;
 
+      case 'datos_equipo':
+        $rspta = $equipos->datos_equipo($_POST["idequipo"]);
+        echo json_encode($rspta);
+      break;
 
     }
 

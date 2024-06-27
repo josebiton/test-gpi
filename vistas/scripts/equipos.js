@@ -150,7 +150,83 @@ function lista_tabla_alumnos() {
 function ver_proyecto(idequipo){
   show_hide_rows(3);
   console.log(idequipo);
-  
+  $("#div-datos-pi").empty();
+
+  $.post("../ajax/equipos.php?op=datos_equipo", { idequipo: idequipo }, function (e, status) {
+    e = JSON.parse(e);
+    if(e.status == true){
+
+      // Formatear las fechas
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      // Crear fechas en la zona horaria local
+      const fechaInicioParts = e.data.fecha_inicio.split('-');
+      const fechaInicio = new Date(fechaInicioParts[0], fechaInicioParts[1] - 1, fechaInicioParts[2]);
+      const fechaCierreParts = e.data.fecha_cierre.split('-');
+      const fechaCierre = new Date(fechaCierreParts[0], fechaCierreParts[1] - 1, fechaCierreParts[2]);
+      // Convertir a cadena con formato
+      const fechaInicioFormateada = fechaInicio.toLocaleDateString('es-ES', options);
+      const fechaCierreFormateada = fechaCierre.toLocaleDateString('es-ES', options);
+
+      var html_datos = `<div class="col-xl-2">
+                          <span><b>Título: </b></span>
+                        </div>
+                        <div class="col-xl-10">
+                          <span class="fs-16">${e.data.titulo_proyecto}</span>
+                        </div>
+                        <div class="col-12">
+                          <hr class="my-2">
+                        </div>
+                        <div class="col-xl-2 m-0">
+                          <span><b>Descripción: </b></span>
+                        </div>
+                        
+                        <div class="col-xl-10 fs-14"> 
+                          ${e.data.descripcion_proyecto}
+                        </div>
+                        <div class="col-12 m-0 p-0">
+                          <hr class="my-2">
+                        </div>
+                        <div class="col-xl-4 text-center">
+                          <span><b>Fecha Inicio: </b> <p>${fechaInicioFormateada}</p></span>
+                        </div>
+                        <div class="col-xl-4 text-center">
+                          <span><b>Fecha Entrega: </b> <p>${fechaCierreFormateada}</p></span>
+                        </div>
+                        <div class="col-xl-4 text-center">
+                          <span><b>Link Prototipo: </b> <p>${e.data.link_prototipo}</p></span>
+                        </div>
+                        <div class="col-12">
+                          <hr class="my-2">
+                        </div>`;
+
+      $("#div-datos-pi").append(html_datos);
+
+    } else{ver_errores(e);}
+
+  }).fail( function(e) { ver_errores(e); } );
+
+
+  // $.post("../ajax/equipos.php?op=hitos_equipo", { idequipo: idequipo }, function (e, status) {
+  //   e = JSON.parse(e);
+  //   if(e.status == true){
+
+
+
+  //   } else{ver_errores(e);}
+
+  // }).fail( function(e) { ver_errores(e); } );
+
+
+  // $.post("../ajax/equipos.php?op=actividades_equipo", { idequipo: idequipo }, function (e, status) {
+  //   e = JSON.parse(e);
+  //   if(e.status == true){
+
+
+
+  //   } else{ver_errores(e);}
+
+  // }).fail( function(e) { ver_errores(e); } );
+
 }
 
 
