@@ -91,6 +91,9 @@ function listar_equipo(){
   }).DataTable();
 }
 
+
+
+
 function mostrar_titulo(){
   $("#modal-agregar-titulo").modal("show");
   $.post("../ajax/equipo.php?op=datos_equipo", { idequipo: idequipo }, function (e, status) {
