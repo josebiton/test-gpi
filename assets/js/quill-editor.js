@@ -33,7 +33,7 @@
         modules: {
             toolbar: undefined
         },
-        theme: 'bubble'
+        theme: 'snow'
     });
 
 })();

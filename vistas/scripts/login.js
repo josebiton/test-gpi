@@ -50,19 +50,12 @@ function validar_response(e) {
 			toastr_success('Bienvenido de vuelta.', 'Te damos la bienvenida de vuelta. ¡Esperamos que disfrutes tu experiencia!');
 			var redirecinando = varaibles_get();
 			$('.login-btn').html('Iniciar sesion').prop("disabled", false).removeClass('disabled btn-outline-dark').addClass('btn-primary');
-			localStorage.setItem('nube_id_usuario', e.data.usuario.idusuario);
-
-			if (e.data.sucursal == null) {
-				localStorage.setItem('nube_id_sucursal', 0);
-				localStorage.setItem('nube_nombre_sucursal', '');
-				localStorage.setItem('nube_codigo_sucursal', '');
-				localStorage.setItem('nube_direcion_sucursal', '');
-			} else {
-				localStorage.setItem('nube_id_sucursal', e.data.sucursal.idempresa);
-				localStorage.setItem('nube_nombre_sucursal', e.data.sucursal.nombre_comercial);
-				localStorage.setItem('nube_codigo_sucursal', '');
-				localStorage.setItem('nube_direcion_sucursal', e.data.sucursal.domicilio_fiscal);
-			}
+			localStorage.setItem('nube_id_usuario', JSON.stringify({
+				idusuario: e.data.usuario.idusuario,
+				idfta: e.data.filtro_user.filtro_a,
+				idftb: e.data.filtro_user.filtro_b,
+				idftc: e.data.filtro_user.filtro_c
+			}));
 
 			if (redirecinando.file == '' || redirecinando.file == null) {	$(location).attr("href", "escritorio.php");	} else { $(location).attr("href", redirecinando.file); }			      
 		}

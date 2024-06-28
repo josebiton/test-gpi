@@ -25,113 +25,103 @@
         </svg>
       </div>
       <ul class="main-menu">
-        <!-- Start::slide__category -->
-        <li class="slide__category"><span class="category-name">I N I C I O</span></li>
-        <!-- End::slide__category -->
 
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['dashboard_empresa'] == '1') { ?>
+
+        <!-- Start::================== INICIO  ================== -->
+        <li class="slide__category"><span class="category-name">I N I C I O</span></li>
+
+        <!-- Escritorio Estudiante -->
+        <?php if ($_SESSION['escritorioE'] == '1') { ?>
         <li class="slide">
           <a href="escritorio.php" class="side-menu__item">
-            <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label"> Dashboards</span>
+            <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label">Escritorio</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
+        <!-- End::E.Estudiante -->
 
-        <!-- Start::slide__category -->
-        <li class="slide__category"><span class="category-name">L O G I S T I C A</span></li>
-        <!-- End::slide__category -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['empresa'] == '1') { ?>
+        <!-- Escritorio Docente -->
+        <?php if ($_SESSION['escritorioDOSC'] == '1') { ?>
         <li class="slide">
+<<<<<<< HEAD
           <a href="trabajador.php" class="side-menu__item">
             <i class="bx bx-building side-menu__icon"></i><span class="side-menu__label"> Empresa</span>
+=======
+          <a href="escritorio.php" class="side-menu__item">
+            <i class="bx bx-home side-menu__icon"></i><span class="side-menu__label">Escritorio</span>
+>>>>>>> desarrollo
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
+        <!-- End::E.Docente -->
 
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['nosotros'] == '1') { ?>
+        
+
+        <!-- Start::================== PROYECTO  ================== -->
+        <li class="slide__category"><span class="category-name">P R O Y E C T O</span></li>
+        
+        <!-- Perfil de Proyecto -->
+        <?php  if ($_SESSION['perfil'] == '1') { ?>
         <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-extension side-menu__icon"></i><span class="side-menu__label"> Nosotros</span>
+          <a href="perfil_proyecto.php" class="side-menu__item">
+            <i class="bx bx-atom side-menu__icon"></i><span class="side-menu__label">Perfil</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
+        <!-- End::P.Proyecto -->
 
-
-
-        <!-- Start::slide__category -->
-        <li class="slide__category"><span class="category-name">E S T R U C T U R A</span></li>
-        <!-- End::slide__category -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['sucursales'] == '1') { ?>
+        <!-- Cronograma -->
+        <?php  if ($_SESSION['cronograma'] == '1') { ?>
         <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-buildings side-menu__icon"></i><span class="side-menu__label"> sucursales</span>
+          <a href="cronograma.php" class="side-menu__item">
+            <i class="bx bx-calendar side-menu__icon"></i><span class="side-menu__label">Cronograma</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['departamentos'] == '1') { ?>
+        <!-- End::P.Proyecto -->
+        
+        <!-- Alunnos -->
+        <?php  if ($_SESSION['alumnos'] == '1') { ?>
         <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-sitemap side-menu__icon"></i><span class="side-menu__label"> departamentos</span>
+          <a href="alumnos.php" class="side-menu__item">
+            <i class="bx bx-group side-menu__icon"></i><span class="side-menu__label">Alumnos</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['subdepartamentos'] == '1') { ?>
+        <!-- End::Alunnos -->
+        
+        <!-- Equipos -->
+        <?php  if ($_SESSION['equipos'] == '1') { ?>
         <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-network-chart side-menu__icon"></i><span class="side-menu__label"> Subdepartamentos</span>
+          <a href="equipos.php" class="side-menu__item">
+            <i class="bx bx-book side-menu__icon"></i><span class="side-menu__label">Equipos</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
+        <!-- End::Equipos -->
 
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['departamentos_operativos'] == '1') { ?>
+        <li class="slide__category"><span class="category-name">G E N E R A L</span></li>
+
+        <!-- Equipo -->
+        <?php  if ($_SESSION['equipo'] == '1') { ?>
         <li class="slide">
-          <a href="pos.php" class="side-menu__item">
-            <i class="bx bx-home side-menu__icon side-menu__icon"></i><span class="side-menu__label"> departamentos_operativos</span>
+          <a href="equipo.php" class="side-menu__item">
+          <i class="bx bx-group side-menu__icon"></i><span class="side-menu__label">Equipo</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
+        <!-- End::Equipo -->
 
-        <!-- Start::slide__category -->
-        <li class="slide__category"><span class="category-name">A D M I N I S T R A C I Ó N</span></li>
-        <!-- End::slide__category -->
-
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['usuario'] == '1') { ?>
+        <!-- Usuario Estudiante -->
+        <?php  if ($_SESSION['usuario estudiante'] == '1') { ?>
         <li class="slide">
-          <a href="usuario.php" class="side-menu__item">
-            <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label">Usuario</span>
+          <a href="usuario_e.php" class="side-menu__item">
+          <i class="bx bx-user side-menu__icon"></i><span class="side-menu__label">Usuario</span>
           </a>
         </li>
         <?php } ?>
-        <!-- End::slide -->
+        <!-- End::Usuario-estudiante -->
 
-        <!-- Start::slide -->
-        <?php  if ($_SESSION['trabajador'] == '1') { ?>
-        <li class="slide">
-          <a href="trabajador.php" class="side-menu__item">
-            <i class="bx bx-briefcase side-menu__icon"></i><span class="side-menu__label">Trabajador</span>
-          </a>
-        </li>
-        <?php } ?>
-        <!-- End::slide -->
 
         
       </ul>

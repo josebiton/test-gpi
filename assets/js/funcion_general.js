@@ -768,8 +768,8 @@ function doc_view_extencion(filename, url_carpeta='',  width='50%', height='auto
     host =  `${url_carpeta}` ;
     ruta = host;
   } else {
-    ruta =  `${window.location.origin}/brartnet/${url_carpeta}/${filename}`;     
-    host = window.location.host == 'localhost' || es_numero(parseFloat(window.location.host)) == true ? `${window.location.origin}/brartnet/${url_carpeta}/${filename}` : `${window.location.origin}/${url_carpeta}/${filename}` ;    
+    ruta =  `${window.location.origin}/gpi/${url_carpeta}/${filename}`;     
+    host = window.location.host == 'localhost' || es_numero(parseFloat(window.location.host)) == true ? `${window.location.origin}/gpi/${url_carpeta}/${filename}` : `${window.location.origin}/${url_carpeta}/${filename}` ;    
   }  
   
   // cargamos la imagen adecuada par el archivo
@@ -798,7 +798,7 @@ function doc_view_download_expand(filename, ruta='', nombre_decarga='', width='5
   var html = ''; var extencion = '';
   var expand_disabled = '';
 
-  var ruta_file = window.location.host == 'localhost' || es_numero(parseFloat(window.location.host)) == true ? `${window.location.origin}/brartnet/${ruta}/${filename}` : `${window.location.origin}/${ruta}/${filename}` ;
+  var ruta_file = window.location.host == 'localhost' || es_numero(parseFloat(window.location.host)) == true ? `${window.location.origin}/gpi/${ruta}/${filename}` : `${window.location.origin}/${ruta}/${filename}` ;
  
   // cargamos la imagen adecuada par el archivo
   if ( UrlExists(ruta_file) != 200 ) { console.log('no existe');
@@ -969,7 +969,7 @@ function buscar_sunat_reniec(input='', tipo_documento, dniruc, nombre, apellido,
 
   let dni_ruc = $(dniruc).val(); 
    
-  if (tipo_doc == "1") { // DNI
+  if (tipo_doc == "DNI") { // DNI
 
     if (dni_ruc.length == "8") {
 
@@ -1009,7 +1009,7 @@ function buscar_sunat_reniec(input='', tipo_documento, dniruc, nombre, apellido,
       $(nombre).val(''); $(apellido).val(''); $(titular).val('');
       toastr_info('Alerta!!', 'Asegurese de que el DNI tenga 8 dígitos!!!', 700);
     }
-  } else if (tipo_doc == "6") {  // RUC
+  } else if (tipo_doc == "RUC") {  // RUC
 
     if (dni_ruc.length == "11") {
       $.post("../ajax/ajax_general.php?op=sunat_gpi", { ruc: dni_ruc }, function (data, status) {
@@ -1073,7 +1073,7 @@ function buscar_sunat_reniec(input='', tipo_documento, dniruc, nombre, apellido,
 
       toastr_info('Alerta!!', 'Asegurese de que el RUC tenga 11 dígitos!!!', 700);
     }
-  } else if (tipo_doc == "0" || tipo_doc == "4" || tipo_doc == "7") {    
+  } else if (tipo_doc == "NINGUNO" || tipo_doc == "CE" || tipo_doc == "PASAPORTE" || tipo_doc == "COD. UNIVERCITARIO") {    
 
     $(`#search${input}`).show();  $(`#charge${input}`).hide();
     toastr_info('Alerta!!', 'No necesita hacer consulta.', 700);
@@ -1217,7 +1217,7 @@ function UrlExists(url) {
 
 function DocExist(url) {  
   
-  var host = window.location.host == 'localhost' || es_numero(parseFloat(window.location.host)) == true ? `${window.location.origin}/brartnet/${url}` : `${window.location.origin}/${url}`;
+  var host = window.location.host == 'localhost' || es_numero(parseFloat(window.location.host)) == true ? `${window.location.origin}/gpi/${url}` : `${window.location.origin}/${url}`;
   
   var http = new XMLHttpRequest();
   http.open("HEAD", host, false);
